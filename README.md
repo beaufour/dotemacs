@@ -34,16 +34,16 @@ Usage
 =====
 
 My setup is mostly centered around Python coding with a few modes for
-ops/backend stuff. Some "highlights:
+ops/backend stuff. Some "highlights":
 
 * it automatically highlights Python syntax errors using
-`flymake`+`pyflakes` - use _f2_ and _f3_ to navigate between errors
+`flymake`+`pyflakes` - use _F2_ and _F3_ to navigate between errors
 
 * run `pyflakes` and `pep8` on a file with _C-c C-w_
 
 * `git status` can be shown with _C-c C-g_
 
-* it detects executable files and automatically sets `x` bit
+* it detects executable files and automatically sets _x_ bit
 
 TODO
 ====
