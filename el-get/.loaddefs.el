@@ -3,7 +3,7 @@
 ;;; Code:
 
 
-;;;### (autoloads (ack) "ack/ack" "ack/ack.el" (20686 64106))
+;;;### (autoloads (ack) "ack/ack" "ack/ack.el" (20687 5546))
 ;;; Generated autoloads from ack/ack.el
 
 (autoload 'ack "ack/ack" "\
@@ -15,16 +15,16 @@
 
 ;;;### (autoloads (actionscript-mode) "actionscript-mode-connors/actionscript-mode-connors"
 ;;;;;;  "actionscript-mode-connors/actionscript-mode-connors.el"
-;;;;;;  (20686 63206))
+;;;;;;  (20687 5550))
 ;;; Generated autoloads from actionscript-mode-connors/actionscript-mode-connors.el
 
 (add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
 
 (autoload 'actionscript-mode "actionscript-mode-connors/actionscript-mode-connors" "\
-Major mode for editing ACTIONSCRIPT Actionscript is an
+Major mode for editing ACTIONSCRIPT Actionscript is an 
 EcmaScript variant for coding for the Flash Player Runtime
 by Adobe.
-
+ 
 The hook `c-mode-common-hook' is run with no args at mode
 initialization, then `actionscript-mode-hook'.
 
@@ -177,7 +177,7 @@ Initialize the color theme package by loading color-theme-libraries.
 
 ;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
 ;;;;;;  el-get-self-update el-get-update-all el-get-version) "el-get/el-get"
-;;;;;;  "el-get/el-get.el" (20686 59148))
+;;;;;;  "el-get/el-get.el" (20687 5114))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -214,7 +214,7 @@ Compute the checksum of the given package, and put it in the kill-ring
 ;;;***
 
 ;;;### (autoloads (el-get-list-packages) "el-get/el-get-list-packages"
-;;;;;;  "el-get/el-get-list-packages.el" (20686 59147))
+;;;;;;  "el-get/el-get-list-packages.el" (20687 5114))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -225,7 +225,7 @@ Display a list of packages.
 ;;;***
 
 ;;;### (autoloads (ethan-wspace-mode) "ethan-wspace/lisp/ethan-wspace"
-;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (20686 62320))
+;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (20687 5568))
 ;;; Generated autoloads from ethan-wspace/lisp/ethan-wspace.el
 
 (autoload 'ethan-wspace-mode "ethan-wspace/lisp/ethan-wspace" "\
@@ -238,7 +238,7 @@ This just activates each whitespace type in this buffer.
 ;;;***
 
 ;;;### (autoloads (git-reblame git-blame-mode) "git-emacs/git-blame"
-;;;;;;  "git-emacs/git-blame.el" (20686 62070))
+;;;;;;  "git-emacs/git-blame.el" (20687 5581))
 ;;; Generated autoloads from git-emacs/git-blame.el
 
 (autoload 'git-blame-mode "git-emacs/git-blame" "\
@@ -256,7 +256,7 @@ Recalculate all blame information in the current buffer
 ;;;***
 
 ;;;### (autoloads (godoc gofmt-before-save gofmt go-mode) "go-mode/go-mode"
-;;;;;;  "go-mode/go-mode.el" (20686 63261))
+;;;;;;  "go-mode/go-mode.el" (20687 5618))
 ;;; Generated autoloads from go-mode/go-mode.el
 
 (autoload 'go-mode "go-mode/go-mode" "\
@@ -290,7 +290,7 @@ Show go documentation for a query, much like M-x man.
 ;;;***
 
 ;;;### (autoloads (js2-imenu-extras-setup) "js2-mode/js2-imenu-extras"
-;;;;;;  "js2-mode/js2-imenu-extras.el" (20686 62857))
+;;;;;;  "js2-mode/js2-imenu-extras.el" (20687 5621))
 ;;; Generated autoloads from js2-mode/js2-imenu-extras.el
 
 (autoload 'js2-imenu-extras-setup "js2-mode/js2-imenu-extras" "\
@@ -301,7 +301,7 @@ Show go documentation for a query, much like M-x man.
 ;;;***
 
 ;;;### (autoloads (js2-mode) "js2-mode/js2-mode" "js2-mode/js2-mode.el"
-;;;;;;  (20686 62857))
+;;;;;;  (20687 5621))
 ;;; Generated autoloads from js2-mode/js2-mode.el
  (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
@@ -315,7 +315,7 @@ Major mode for editing JavaScript code.
 ;;;***
 
 ;;;### (autoloads (markdown-mode) "markdown-mode/markdown-mode" "markdown-mode/markdown-mode.el"
-;;;;;;  (20686 62685))
+;;;;;;  (20687 5628))
 ;;; Generated autoloads from markdown-mode/markdown-mode.el
 
 (autoload 'markdown-mode "markdown-mode/markdown-mode" "\
@@ -326,7 +326,7 @@ Major mode for editing Markdown files.
 ;;;***
 
 ;;;### (autoloads (nginx-mode) "nginx-mode/nginx-mode" "nginx-mode/nginx-mode.el"
-;;;;;;  (20686 63442))
+;;;;;;  (20687 5639))
 ;;; Generated autoloads from nginx-mode/nginx-mode.el
 
 (autoload 'nginx-mode "nginx-mode/nginx-mode" "\
@@ -340,7 +340,7 @@ The variable nginx-indent-level controls the amount of indentation.
 ;;;***
 
 ;;;### (autoloads (php-mode php-file-patterns php) "php-mode/php-mode"
-;;;;;;  "php-mode/php-mode.el" (20686 63242))
+;;;;;;  "php-mode/php-mode.el" (20687 5641))
 ;;; Generated autoloads from php-mode/php-mode.el
 
 (let ((loads (get 'php 'custom-loads))) (if (member '"php-mode/php-mode" loads) nil (put 'php 'custom-loads (cons '"php-mode/php-mode" loads))))
@@ -362,7 +362,7 @@ Major mode for editing PHP code.
 ;;;***
 
 ;;;### (autoloads (puppet-mode) "puppet-mode/puppet-mode" "puppet-mode/puppet-mode.el"
-;;;;;;  (20686 63276))
+;;;;;;  (20687 5647))
 ;;; Generated autoloads from puppet-mode/puppet-mode.el
 
 (autoload 'puppet-mode "puppet-mode/puppet-mode" "\
@@ -376,7 +376,7 @@ The variable puppet-indent-level controls the amount of indentation.
 ;;;***
 
 ;;;### (autoloads (yaml-mode yaml) "yaml-mode/yaml-mode" "yaml-mode/yaml-mode.el"
-;;;;;;  (20686 63310))
+;;;;;;  (20687 5792))
 ;;; Generated autoloads from yaml-mode/yaml-mode.el
 
 (let ((loads (get 'yaml 'custom-loads))) (if (member '"yaml-mode/yaml-mode" loads) nil (put 'yaml 'custom-loads (cons '"yaml-mode/yaml-mode" loads))))
@@ -393,7 +393,7 @@ Simple mode to edit YAML.
 ;;;***
 
 ;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet/yasnippet"
-;;;;;;  "yasnippet/yasnippet.el" (20686 62257))
+;;;;;;  "yasnippet/yasnippet.el" (20687 5805))
 ;;; Generated autoloads from yasnippet/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet/yasnippet" "\
@@ -439,15 +439,15 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "git-emacs/git--test.el"
-;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
-;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
-;;;;;;  "git-emacs/git-status.el" "nagios-mode/nagios-mode.el" "python-mode/python-mode.el"
-;;;;;;  "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-mode.el"
-;;;;;;  "rhtml-mode/rhtml-navigation.el" "rhtml-mode/rhtml-ruby-hook.el"
-;;;;;;  "rhtml-mode/rhtml-sgml-hacks.el" "yasnippet/dropdown-list.el"
-;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (20686 64858 590184))
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "fuzzy/fuzzy.el"
+;;;;;;  "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
+;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
+;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "nagios-mode/nagios-mode.el"
+;;;;;;  "popup/popup.el" "python-mode/python-mode.el" "rhtml-mode/rhtml-erb.el"
+;;;;;;  "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-mode.el" "rhtml-mode/rhtml-navigation.el"
+;;;;;;  "rhtml-mode/rhtml-ruby-hook.el" "rhtml-mode/rhtml-sgml-hacks.el"
+;;;;;;  "yasnippet/dropdown-list.el" "yasnippet/yasnippet-debug.el"
+;;;;;;  "yasnippet/yasnippet-tests.el") (20687 5805 630807))
 
 ;;;***
 
