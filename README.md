@@ -30,6 +30,15 @@ Then put this in your `~/.emacs` file:
     (add-to-list 'load-path "~/.emacs.d/")
     (load "my-init")
 
+Do note that the first run will take a *long* time (as `el-get`
+downloads modules). Also the bootstrapping might not work. If it
+doesn't, then run this manually:
+
+    (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+    (require 'el-get)
+    (el-get 'sync)
+
+
 Usage
 =====
 
