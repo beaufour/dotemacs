@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+# name: npdb
+# contributor: Allan Beaufour <allan@beaufour.dk>
+# key: npdb
+# --
+import nose; nose.tools.set_trace()

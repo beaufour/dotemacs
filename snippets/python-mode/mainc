@@ -1,0 +1,35 @@
+# name: full main boilerplate, with chartbeat options
+# key: mainc
+# --
+#!/usr/bin/python
+#
+# TODO: doc
+#
+
+from __future__ import absolute_import
+import sys
+
+from pychartbeat.loggingutils import basicConfig
+from pychartbeat.loggingutils import define_logging_options
+from pychartbeat.options import define
+from pychartbeat.options import Error as OptionsError
+from pychartbeat.options import options
+from pychartbeat.options import parse_command_line
+
+
+def main():
+    define_logging_options(console=True)
+    # TODO: remove/change param
+    define('myparam', type=str, default='foo',
+           help='My Foo')
+    try:
+        parse_command_line()
+    except OptionsError, ex:
+        print >> sys.stderr, 'ERROR: {0}'.format(ex)
+        return -1
+
+    basicConfig(options=options)
+    $0
+
+if __name__ == '__main__':
+    sys.exit(main())

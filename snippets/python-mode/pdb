@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+# name: pdb
+# contributor: Allan Beaufour <allan@beaufour.dk>
+# key: pdb
+# --
+import pdb; pdb.set_trace()

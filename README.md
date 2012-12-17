@@ -45,6 +45,6 @@ ops/backend stuff. Some "highlights":
 
 * it detects executable files and automatically sets _x_ bit
 
-TODO
-====
-* yasnippet, custom snippets
+* there are some custom snippets like `main`. Try typing `main + TAB`
+  in a new file (or `mainc + TAB` for the "chartbeat version"). See
+  inside `~/.emacs.d/snippets` for the more/sources).
