@@ -2,6 +2,8 @@ Introduction
 ============
 This is my current Emacs setup.
 
+I run OS X, so I've only tested it there.
+
 Requirements
 ============
 
