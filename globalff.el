@@ -44,6 +44,8 @@
 ;; Customize support contributed by Lennart Borgman and Stefan Kamphausen.
 ;; Camel case support added by Eyal Erez.
 ;;
+;; beaufour - butchered to use 'mdfind' instead of locate
+;;
 
 ;;; Code:
 
@@ -94,6 +96,11 @@ path."
 (defcustom globalff-databases nil
   "*List of database files separated with colon to be used by the
 locate command. If nil then the system default database is used."
+  :type 'string
+  :group 'globalff)
+
+(defcustom globalff-search-location (getenv "HOME")
+  "*Only search this directory location"
   :type 'string
   :group 'globalff)
 
@@ -377,24 +384,13 @@ MOVEFUNC and MOVEARG."
                 (< (length input) globalff-minimum-input-length))
       (setq globalff-process
             (apply 'start-process "globalff-process" nil
-                   "locate"
-                   (append
-                    (unless globalff-case-sensitive-search
-                      (list "-i"))
-
-                    (if globalff-basename-match
-                        (list "-b"))
-
-                    (when globalff-databases
-                      (list (concat "--database="
-                                    globalff-databases)))
-
-                    (if globalff-regexp-search
-                        (list "-r"))
-
-		    (if globalff-camelcase-search
-			(list (globalff-camelcase-generate input))
-		      (list input)))))
+                   ;; beaufour - only works with OS X, obviously
+                   "mdfind"
+                   (list
+                    "-onlyin" globalff-search-location
+                    ;; See: https://developer.apple.com/library/mac/#documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html
+                    (concat "kMDItemDisplayName == '*" input "*'wc"))
+                   ))
 
       (globalff-set-state "searching")
       (move-overlay globalff-overlay (point-min) (point-min))
