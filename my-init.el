@@ -119,7 +119,7 @@
 ;; Ag - the silver searcher
 ;; https://github.com/ggreer/the_silver_searcher
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq ack-command "ag --nocolor")
+(setq ack-command "ag --nogroup --nocolor")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; VCL mode
