@@ -165,7 +165,12 @@
 ;; Git Mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'git)
-(global-set-key [?\C-c ?\C-g] 'git-status)
+(defun my-git-status ()
+  "Run git status on the current directory"
+  (interactive)
+  (git-status default-directory)
+)
+(global-set-key [?\C-c ?\C-g] 'my-git-status)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setup extension -> mode mappings
