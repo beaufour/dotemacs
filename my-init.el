@@ -167,6 +167,27 @@
 (require 'json-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; js2-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Make js2-mode support JsLint 'global' variables, like:
+;; /* global console, jQuery, $, _, Backbone */
+;; From: http://www.emacswiki.org/emacs/Js2Mode
+;;
+(eval-after-load "js2-mode"
+  '(progn
+     (add-hook 'js2-post-parse-callbacks 'my-js2-parse-global-vars-decls)
+     (defun my-js2-parse-global-vars-decls ()
+       (let ((btext (replace-regexp-in-string
+                     ": *true" " "
+                     (replace-regexp-in-string "[\n\t ]+" " " (buffer-substring-no-properties 1 (buffer-size)) t t))))
+         (setq js2-additional-externs
+               (split-string
+                (if (string-match "/\\* *global *\\(.*?\\) *\\*/" btext) (match-string-no-properties 1 btext) "")
+                " *, *" t))
+         ))
+     ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Git Mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'git)
