@@ -15,9 +15,20 @@ depend on a few external utilities though:
 * [pep8](http://pypi.python.org/pypi/pep8)
 * [ag](https://github.com/ggreer/the_silver_searcher)
 
+Note that if you don't run Emacs from the shell (on OS X) these need
+to be in your default _PATH_, which is `/usr/bin`, so if you've
+installed these using homebrew or something like that, you need to
+symlink these into `/usr/bin`. Or jump through the 400 hoops it takes
+to get non-standard paths into the environment for Emacs.
+
 Installation
 ============
-First, install `el-get`:
+
+Start by cloning this repo into `~/emacs.d`
+
+    git clone git@github.com:beaufour/dotemacs.git ~/.emacs.d
+
+Then open Emacs and install `el-get`:
 
     ;; So the idea is that you copy/paste this code into your *scratch* buffer,
     ;; hit C-j, and you have a working el-get.
@@ -31,6 +42,8 @@ Then put this in your `~/.emacs` file:
 
     (add-to-list 'load-path "~/.emacs.d/")
     (load "my-init")
+
+Close Emacs, and open it again, and the magic will start :)
 
 Do note that the first run will take a *long* time (as `el-get`
 downloads modules). Also the bootstrapping might not work. If it
