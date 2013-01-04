@@ -57,6 +57,21 @@
 (ac-config-default)
 (setq py-install-directory "~/.emacs.d/el-get/python-mode/")
 
+;; run autopep8 on the current buffer
+(defun py-autopep8 ()
+  (interactive)
+  (shell-command-on-region
+   ;; beginning and end of region
+   (point-min) (point-max)
+   ;; command
+   "~/.emacs.d/autopep8.sh"
+   ;; output buffer
+   (current-buffer)
+   ;; error buffer
+   "*autopep8 Error Buffer*"
+   ;; show error buffer
+   t
+  ))
 
 ;; Flymake setup from:
 ;; http://www.yilmazhuseyin.com/blog/dev/emacs-setup-python-development/
