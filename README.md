@@ -67,7 +67,7 @@ ops/backend stuff. Some "highlights":
 
 * `git status` can be shown with _C-c C-g_
 
-* spotlight search for a filename can be done with _C-c C-f_
+* spotlight search for a filename can be done with _C-c C-o_
 
 * it detects executable files and automatically sets _x_ bit
 

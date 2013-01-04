@@ -146,7 +146,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'globalff)
 (setq globalff-search-location (concat (getenv "HOME") "/superfly"))
-(global-set-key [?\C-c ?\C-f] 'globalff)
+(global-set-key [?\C-c ?\C-o] 'globalff)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Yasnippet setup
