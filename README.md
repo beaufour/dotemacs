@@ -24,7 +24,7 @@ to get non-standard paths into the environment for Emacs.
 Installation
 ============
 
-Start by cloning this repo into `~/emacs.d`
+Start by cloning this repo into `~/.emacs.d`
 
     git clone git@github.com:beaufour/dotemacs.git ~/.emacs.d
 
