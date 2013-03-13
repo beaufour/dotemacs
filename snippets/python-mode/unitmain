@@ -1,0 +1,17 @@
+# name: full unittest main boilerplate
+# key: unitmain
+# --
+#!/usr/bin/env python
+import unittest
+
+
+class TestAction(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_sample(self):
+        self.assertTrue(False)
+
+
+if __name__ == '__main__':
+    unittest.main()
