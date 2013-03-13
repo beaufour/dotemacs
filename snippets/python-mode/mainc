@@ -28,7 +28,7 @@ def main():
     try:
         parse_command_line()
     except OptionsError, ex:
-        print >> sys.stderr, 'ERROR: {0}'.format(ex)
+        print('ERROR: {0}\n'.format(ex), file=sys.stderr)
         return -1
 
     basicConfig(options=options)
