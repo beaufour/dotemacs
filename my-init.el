@@ -47,6 +47,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq make-backup-files t)
 (setq version-control t)
+(setq delete-old-versions t)
 (setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
