@@ -1,5 +1,4 @@
-((ack status "installed" recipe
-      (:name ack :type http :localname "ack.el" :url "http://repo.or.cz/w/ShellArchive.git?a=blob_plain;hb=HEAD;f=ack.el" :shallow nil :description "Use ack where you might usually use grep." :features ack))
+((ack status "removed" recipe nil)
  (actionscript-mode-connors status "installed" recipe
                             (:name actionscript-mode-connors :auto-generated t :type emacswiki :description "actionscript mode derived from cc-mode" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/actionscript-mode-connors.el"))
  (auto-complete status "removed" recipe nil)
