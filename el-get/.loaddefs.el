@@ -3,16 +3,6 @@
 ;;; Code:
 
 
-;;;### (autoloads (ack) "ack/ack" "ack/ack.el" (20708 23337 0 0))
-;;; Generated autoloads from ack/ack.el
-
-(autoload 'ack "ack/ack" "\
-
-
-\(fn COMMAND-ARGS)" t nil)
-
-;;;***
-
 ;;;### (autoloads (actionscript-mode) "actionscript-mode-connors/actionscript-mode-connors"
 ;;;;;;  "actionscript-mode-connors/actionscript-mode-connors.el"
 ;;;;;;  (20708 23340 0 0))
@@ -439,8 +429,8 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el") (20810
-;;;;;;  2900 773267 0))
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el") (20811
+;;;;;;  3813 585190 0))
 
 ;;;***
 

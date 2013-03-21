@@ -1,6 +1,5 @@
 ((ack status "removed" recipe nil)
- (actionscript-mode-connors status "installed" recipe
-                            (:name actionscript-mode-connors :auto-generated t :type emacswiki :description "actionscript mode derived from cc-mode" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/actionscript-mode-connors.el"))
+ (actionscript-mode-connors status "removed" recipe nil)
  (auto-complete status "removed" recipe nil)
  (color-theme status "installed" recipe
               (:name color-theme :description "An Emacs-Lisp package with more than 50 color themes for your use. For questions about color-theme" :website "http://www.nongnu.org/color-theme/" :type http-tar :options
