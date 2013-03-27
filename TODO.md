@@ -5,7 +5,9 @@ High priority
   * `superfly/foo/bar` ->
     [https://github.com/chartbeat/chartbeat/blob/master/foo/bar](https://github.com/chartbeat/chartbeat/blob/master/foo/bar)
 
-* automatically find 'project root' instead of hardcoded path in `globalff`
+* automatically find 'project root' instead of hardcoded path in `globalff` (ag mode does this?
+
+* ignore files in globalff (.pyc for example)
 
 Other posibilities
 ==================
