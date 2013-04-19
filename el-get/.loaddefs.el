@@ -3,28 +3,6 @@
 ;;; Code:
 
 
-;;;### (autoloads (actionscript-mode) "actionscript-mode-connors/actionscript-mode-connors"
-;;;;;;  "actionscript-mode-connors/actionscript-mode-connors.el"
-;;;;;;  (20708 23340 0 0))
-;;; Generated autoloads from actionscript-mode-connors/actionscript-mode-connors.el
-
-(add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
-
-(autoload 'actionscript-mode "actionscript-mode-connors/actionscript-mode-connors" "\
-Major mode for editing ACTIONSCRIPT Actionscript is an 
-EcmaScript variant for coding for the Flash Player Runtime
-by Adobe.
- 
-The hook `c-mode-common-hook' is run with no args at mode
-initialization, then `actionscript-mode-hook'.
-
-Key bindings:
-\\{actionscript-mode-map}
-
-\(fn)" t nil)
-
-;;;***
-
 ;;;### (autoloads (color-theme-initialize color-theme-submit color-theme-install
 ;;;;;;  color-theme-compare color-theme-make-snapshot color-theme-analyze-defun
 ;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
@@ -280,7 +258,7 @@ Show go documentation for a query, much like M-x man.
 ;;;***
 
 ;;;### (autoloads (js2-imenu-extras-setup) "js2-mode/js2-imenu-extras"
-;;;;;;  "js2-mode/js2-imenu-extras.el" (20708 23361 0 0))
+;;;;;;  "js2-mode/js2-imenu-extras.el" (20828 30021 0 0))
 ;;; Generated autoloads from js2-mode/js2-imenu-extras.el
 
 (autoload 'js2-imenu-extras-setup "js2-mode/js2-imenu-extras" "\
@@ -290,15 +268,20 @@ Show go documentation for a query, much like M-x man.
 
 ;;;***
 
-;;;### (autoloads (js2-mode) "js2-mode/js2-mode" "js2-mode/js2-mode.el"
-;;;;;;  (20708 23361 0 0))
+;;;### (autoloads (js2-mode js2-minor-mode) "js2-mode/js2-mode" "js2-mode/js2-mode.el"
+;;;;;;  (20828 30021 0 0))
 ;;; Generated autoloads from js2-mode/js2-mode.el
- (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(autoload 'js2-minor-mode "js2-mode/js2-mode" "\
+Minor mode for running js2 as a background linter.
+This allows you to use a different major mode for JavaScript editing,
+such as `espresso-mode', while retaining the asynchronous error/warning
+highlighting features of `js2-mode'.
+
+\(fn &optional ARG)" t nil)
 
 (autoload 'js2-mode "js2-mode/js2-mode" "\
 Major mode for editing JavaScript code.
-
-\\{js2-mode-map}
 
 \(fn)" t nil)
 
@@ -429,8 +412,8 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el") (20811
-;;;;;;  3813 585190 0))
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el") (20849
+;;;;;;  32434 296731 0))
 
 ;;;***
 
