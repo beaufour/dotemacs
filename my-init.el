@@ -256,6 +256,7 @@
             "^#!/usr/.*/sh"
             "^#!/usr/.*/bash"
             "^#!/bin/sh"
+            "^#!/bin/env .*"
             "^#!/usr/.*/python"
             "^#!/bin/bash"))
 (add-hook
