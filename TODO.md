@@ -9,8 +9,13 @@ High priority
 
 * ignore files in globalff (.pyc for example)
 
+* check out [elpy](https://github.com/jorgenschaefer/elpy) and see if it's any good
+
 Other posibilities
 ==================
+
+* disable trailing comma warnings for node code?
+  i.e. js2-strict-trailing-comma-warning nil
 
 * Check out [jedi](https://github.com/tkf/emacs-jedi) for Python mode
 
