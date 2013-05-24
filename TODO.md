@@ -14,6 +14,8 @@ High priority
 Other posibilities
 ==================
 
+* check out [flycheck](https://github.com/lunaryorn/flycheck)
+
 * disable trailing comma warnings for node code?
   i.e. js2-strict-trailing-comma-warning nil
 
