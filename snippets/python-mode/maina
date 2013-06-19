@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+#
+# TODO: dox me
+#
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+import argparse
+import logging
+import sys
+
+
+def main():
+    parser = argparse.ArgumentParser('TODO: name the executable')
+    parser.add_argument('-d', '--debug', default=False, action='store_true',
+                        help='turn on debugging')
+    parser.add_argument('-x', '--long_x', type=str,
+                        help='TODO: fix me')
+    args = parser.parse_args()
+    logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
+
+if __name__ == '__main__':
+    sys.exit(main())
