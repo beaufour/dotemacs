@@ -243,7 +243,7 @@
     '("\\.md$" .    markdown-mode)
     '("\\.erb$" .   rhtml-mode)
     '("\\.yaml$" .  yaml-mode)
-    '("\\.m$" .     octave-mode)
+    '("\\.m$" .     objc-mode)
     )
   auto-mode-alist))
 
