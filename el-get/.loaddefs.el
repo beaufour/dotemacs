@@ -8,7 +8,7 @@
 ;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
 ;;;;;;  color-theme-install-at-mouse color-theme-describe color-theme-select)
 ;;;;;;  "color-theme/color-theme" "color-theme/color-theme.el" (17529
-;;;;;;  41105))
+;;;;;;  41105 0 0))
 ;;; Generated autoloads from color-theme/color-theme.el
 
 (autoload 'color-theme-select "color-theme/color-theme" "\
@@ -145,7 +145,7 @@ Initialize the color theme package by loading color-theme-libraries.
 
 ;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
 ;;;;;;  el-get-self-update el-get-update-all el-get-version) "el-get/el-get"
-;;;;;;  "el-get/el-get.el" (20810 2531 0 0))
+;;;;;;  "el-get/el-get.el" (20900 49648 0 0))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -182,7 +182,7 @@ Compute the checksum of the given package, and put it in the kill-ring
 ;;;***
 
 ;;;### (autoloads (el-get-list-packages) "el-get/el-get-list-packages"
-;;;;;;  "el-get/el-get-list-packages.el" (20708 23048 0 0))
+;;;;;;  "el-get/el-get-list-packages.el" (20900 49648 0 0))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -192,8 +192,8 @@ Display a list of packages.
 
 ;;;***
 
-;;;### (autoloads (ethan-wspace-mode) "ethan-wspace/lisp/ethan-wspace"
-;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (20708 23349 0 0))
+;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "ethan-wspace/lisp/ethan-wspace"
+;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (20900 49769 0 0))
 ;;; Generated autoloads from ethan-wspace/lisp/ethan-wspace.el
 
 (autoload 'ethan-wspace-mode "ethan-wspace/lisp/ethan-wspace" "\
@@ -203,10 +203,31 @@ This just activates each whitespace type in this buffer.
 
 \(fn &optional ARG)" t nil)
 
+(defvar global-ethan-wspace-mode t "\
+Non-nil if Global-Ethan-Wspace mode is enabled.
+See the command `global-ethan-wspace-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-ethan-wspace-mode'.")
+
+(custom-autoload 'global-ethan-wspace-mode "ethan-wspace/lisp/ethan-wspace" nil)
+
+(autoload 'global-ethan-wspace-mode "ethan-wspace/lisp/ethan-wspace" "\
+Toggle Ethan-Wspace mode in all buffers.
+With prefix ARG, enable Global-Ethan-Wspace mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Ethan-Wspace mode is enabled in all buffers where
+`ethan-wspace-is-buffer-appropriate' would do it.
+See `ethan-wspace-mode' for more information on Ethan-Wspace mode.
+
+\(fn &optional ARG)" t nil)
+
 ;;;***
 
 ;;;### (autoloads (git-reblame git-blame-mode) "git-emacs/git-blame"
-;;;;;;  "git-emacs/git-blame.el" (20708 23352 0 0))
+;;;;;;  "git-emacs/git-blame.el" (20900 49774 0 0))
 ;;; Generated autoloads from git-emacs/git-blame.el
 
 (autoload 'git-blame-mode "git-emacs/git-blame" "\
@@ -223,30 +244,72 @@ Recalculate all blame information in the current buffer
 
 ;;;***
 
-;;;### (autoloads (godoc gofmt-before-save gofmt go-mode) "go-mode/go-mode"
-;;;;;;  "go-mode/go-mode.el" (20708 23357 0 0))
+;;;### (autoloads (go-download-play godoc gofmt-before-save go-mode)
+;;;;;;  "go-mode/go-mode" "go-mode/go-mode.el" (20900 49776 0 0))
 ;;; Generated autoloads from go-mode/go-mode.el
 
 (autoload 'go-mode "go-mode/go-mode" "\
 Major mode for editing Go source text.
 
-This provides basic syntax highlighting for keywords, built-ins,
-functions, and some types.  It also provides indentation that is
-\(almost) identical to gofmt.
+This mode provides (not just) basic editing capabilities for
+working with Go code. It offers almost complete syntax
+highlighting, indentation that is almost identical to gofmt and
+proper parsing of the buffer content to allow features such as
+navigation by function, manipulation of comments or detection of
+strings.
+
+In addition to these core features, it offers various features to
+help with writing Go code. You can directly run buffer content
+through gofmt, read godoc documentation from within Emacs, modify
+and clean up the list of package imports or interact with the
+Playground (uploading and downloading pastes).
+
+The following extra functions are defined:
+
+- `gofmt'
+- `godoc'
+- `go-import-add'
+- `go-remove-unused-imports'
+- `go-goto-imports'
+- `go-play-buffer' and `go-play-region'
+- `go-download-play'
+- `godef-describe' and `godef-jump'
+
+If you want to automatically run `gofmt' before saving a file,
+add the following hook to your emacs configuration:
+
+\(add-hook 'before-save-hook 'gofmt-before-save)
+
+If you want to use `godef-jump' instead of etags (or similar),
+consider binding godef-jump to `M-.', which is the default key
+for `find-tag':
+
+\(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd \"M-.\") 'godef-jump)))
+
+Please note that godef is an external dependency. You can install
+it with
+
+go get code.google.com/p/rog-go/exp/cmd/godef
+
+
+If you're looking for even more integration with Go, namely
+on-the-fly syntax checking, auto-completion and snippets, it is
+recommended that you look at goflymake
+\(https://github.com/dougm/goflymake), gocode
+\(https://github.com/nsf/gocode) and yasnippet-go
+\(https://github.com/dominikh/yasnippet-go)
 
 \(fn)" t nil)
 
-(add-to-list 'auto-mode-alist (cons "\\.go$" #'go-mode))
-
-(autoload 'gofmt "go-mode/go-mode" "\
-Pipe the current buffer through the external tool `gofmt`.
-Replace the current buffer on success; display errors on failure.
-
-\(fn)" t nil)
+(add-to-list 'auto-mode-alist (cons "\\.go\\'" 'go-mode))
 
 (autoload 'gofmt-before-save "go-mode/go-mode" "\
 Add this to .emacs to run gofmt on the current buffer when saving:
- (add-hook 'before-save-hook #'gofmt-before-save)
+ (add-hook 'before-save-hook 'gofmt-before-save).
+
+Note that this will cause go-mode to get loaded the first time
+you save any file, kind of defeating the point of autoloading.
 
 \(fn)" t nil)
 
@@ -255,10 +318,17 @@ Show go documentation for a query, much like M-x man.
 
 \(fn QUERY)" t nil)
 
+(autoload 'go-download-play "go-mode/go-mode" "\
+Downloads a paste from the playground and inserts it in a Go
+buffer. Tries to look for a URL at point.
+
+\(fn URL)" t nil)
+
 ;;;***
 
-;;;### (autoloads (js2-imenu-extras-setup) "js2-mode/js2-imenu-extras"
-;;;;;;  "js2-mode/js2-imenu-extras.el" (20828 30021 0 0))
+;;;### (autoloads (js2-imenu-extras-mode js2-imenu-extras-setup)
+;;;;;;  "js2-mode/js2-imenu-extras" "js2-mode/js2-imenu-extras.el"
+;;;;;;  (20900 49778 0 0))
 ;;; Generated autoloads from js2-mode/js2-imenu-extras.el
 
 (autoload 'js2-imenu-extras-setup "js2-mode/js2-imenu-extras" "\
@@ -266,10 +336,15 @@ Show go documentation for a query, much like M-x man.
 
 \(fn)" nil nil)
 
+(autoload 'js2-imenu-extras-mode "js2-mode/js2-imenu-extras" "\
+Toggle Imenu support for frameworks and structural patterns.
+
+\(fn &optional ARG)" t nil)
+
 ;;;***
 
 ;;;### (autoloads (js2-mode js2-minor-mode) "js2-mode/js2-mode" "js2-mode/js2-mode.el"
-;;;;;;  (20828 30021 0 0))
+;;;;;;  (20900 49778 0 0))
 ;;; Generated autoloads from js2-mode/js2-mode.el
 
 (autoload 'js2-minor-mode "js2-mode/js2-mode" "\
@@ -287,8 +362,8 @@ Major mode for editing JavaScript code.
 
 ;;;***
 
-;;;### (autoloads (markdown-mode) "markdown-mode/markdown-mode" "markdown-mode/markdown-mode.el"
-;;;;;;  (20708 23365 0 0))
+;;;### (autoloads (gfm-mode markdown-mode) "markdown-mode/markdown-mode"
+;;;;;;  "markdown-mode/markdown-mode.el" (20900 49782 0 0))
 ;;; Generated autoloads from markdown-mode/markdown-mode.el
 
 (autoload 'markdown-mode "markdown-mode/markdown-mode" "\
@@ -296,10 +371,15 @@ Major mode for editing Markdown files.
 
 \(fn)" t nil)
 
+(autoload 'gfm-mode "markdown-mode/markdown-mode" "\
+Major mode for editing GitHub Flavored Markdown files.
+
+\(fn)" t nil)
+
 ;;;***
 
 ;;;### (autoloads (nginx-mode) "nginx-mode/nginx-mode" "nginx-mode/nginx-mode.el"
-;;;;;;  (20708 23375 0 0))
+;;;;;;  (20900 49786 0 0))
 ;;; Generated autoloads from nginx-mode/nginx-mode.el
 
 (autoload 'nginx-mode "nginx-mode/nginx-mode" "\
@@ -312,18 +392,13 @@ The variable nginx-indent-level controls the amount of indentation.
 
 ;;;***
 
-;;;### (autoloads (php-mode php-file-patterns php) "php-mode/php-mode"
-;;;;;;  "php-mode/php-mode.el" (20708 23376 0 0))
+;;;### (autoloads (php-mode php) "php-mode/php-mode" "php-mode/php-mode.el"
+;;;;;;  (20900 49788 0 0))
 ;;; Generated autoloads from php-mode/php-mode.el
 
 (let ((loads (get 'php 'custom-loads))) (if (member '"php-mode/php-mode" loads) nil (put 'php 'custom-loads (cons '"php-mode/php-mode" loads))))
 
 (add-to-list 'interpreter-mode-alist (cons "php" 'php-mode))
-
-(defvar php-file-patterns '("\\.php[s345t]?\\'" "\\.phtml\\'" "\\.inc\\'") "\
-List of file patterns for which to automatically invoke `php-mode'.")
-
-(custom-autoload 'php-file-patterns "php-mode/php-mode" nil)
 
 (autoload 'php-mode "php-mode/php-mode" "\
 Major mode for editing PHP code.
@@ -332,10 +407,12 @@ Major mode for editing PHP code.
 
 \(fn)" t nil)
 
+(dolist (pattern '("\\.php[s345t]?\\'" "\\.phtml\\'")) (add-to-list 'auto-mode-alist `(,pattern . php-mode)))
+
 ;;;***
 
 ;;;### (autoloads (puppet-mode) "puppet-mode/puppet-mode" "puppet-mode/puppet-mode.el"
-;;;;;;  (20708 23379 0 0))
+;;;;;;  (20900 49791 0 0))
 ;;; Generated autoloads from puppet-mode/puppet-mode.el
 
 (autoload 'puppet-mode "puppet-mode/puppet-mode" "\
@@ -348,8 +425,21 @@ The variable puppet-indent-level controls the amount of indentation.
 
 ;;;***
 
+;;;### (autoloads (rhtml-mode) "rhtml-mode/rhtml-mode" "rhtml-mode/rhtml-mode.el"
+;;;;;;  (20900 49813 0 0))
+;;; Generated autoloads from rhtml-mode/rhtml-mode.el
+
+(autoload 'rhtml-mode "rhtml-mode/rhtml-mode" "\
+Embedded Ruby Mode (RHTML)
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
+
+;;;***
+
 ;;;### (autoloads (yaml-mode yaml) "yaml-mode/yaml-mode" "yaml-mode/yaml-mode.el"
-;;;;;;  (20708 23404 0 0))
+;;;;;;  (20900 49814 0 0))
 ;;; Generated autoloads from yaml-mode/yaml-mode.el
 
 (let ((loads (get 'yaml 'custom-loads))) (if (member '"yaml-mode/yaml-mode" loads) nil (put 'yaml 'custom-loads (cons '"yaml-mode/yaml-mode" loads))))
@@ -366,7 +456,7 @@ Simple mode to edit YAML.
 ;;;***
 
 ;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet/yasnippet"
-;;;;;;  "yasnippet/yasnippet.el" (20708 23407 0 0))
+;;;;;;  "yasnippet/yasnippet.el" (20900 49818 0 0))
 ;;; Generated autoloads from yasnippet/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet/yasnippet" "\
@@ -412,8 +502,14 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el") (20849
-;;;;;;  32434 296731 0))
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "git-emacs/git--test.el"
+;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
+;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
+;;;;;;  "git-emacs/git-status.el" "nagios-mode/nagios-mode.el" "php-mode/php-mode-test.el"
+;;;;;;  "python-mode/python-mode.el" "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el"
+;;;;;;  "rhtml-mode/rhtml-navigation.el" "rhtml-mode/rhtml-ruby-hook.el"
+;;;;;;  "rhtml-mode/rhtml-sgml-hacks.el" "yasnippet/yasnippet-debug.el"
+;;;;;;  "yasnippet/yasnippet-tests.el") (20900 49818 890658 0))
 
 ;;;***
 
