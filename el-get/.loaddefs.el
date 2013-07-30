@@ -411,6 +411,24 @@ Major mode for editing PHP code.
 
 ;;;***
 
+;;;### (autoloads (protobuf-mode) "protobuf-mode/protobuf-mode" "protobuf-mode/protobuf-mode.el"
+;;;;;;  (20966 61912 0 0))
+;;; Generated autoloads from protobuf-mode/protobuf-mode.el
+ (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
+
+(autoload 'protobuf-mode "protobuf-mode/protobuf-mode" "\
+Major mode for editing Protocol Buffers description language.
+
+The hook `c-mode-common-hook' is run with no argument at mode
+initialization, then `protobuf-mode-hook'.
+
+Key bindings:
+\\{protobuf-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (puppet-mode) "puppet-mode/puppet-mode" "puppet-mode/puppet-mode.el"
 ;;;;;;  (20900 49791 0 0))
 ;;; Generated autoloads from puppet-mode/puppet-mode.el
@@ -509,7 +527,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "python-mode/python-mode.el" "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el"
 ;;;;;;  "rhtml-mode/rhtml-navigation.el" "rhtml-mode/rhtml-ruby-hook.el"
 ;;;;;;  "rhtml-mode/rhtml-sgml-hacks.el" "yasnippet/yasnippet-debug.el"
-;;;;;;  "yasnippet/yasnippet-tests.el") (20900 49818 890658 0))
+;;;;;;  "yasnippet/yasnippet-tests.el") (20984 9219 95904 0))
 
 ;;;***
 

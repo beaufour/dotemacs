@@ -36,6 +36,8 @@
            (:name php-mode :description "A PHP mode for GNU Emacs " :type github :pkgname ejmr/php-mode :website "https://github.com/ejmr/php-mode"))
  (popup status "installed" recipe
         (:name popup :website "https://github.com/m2ym/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :pkgname "m2ym/popup-el"))
+ (protobuf-mode status "installed" recipe
+                (:name protobuf-mode :website "http://code.google.com/p/protobuf/" :description "Major mode for editing protocol buffers." :type http :url "http://protobuf.googlecode.com/svn-history/trunk/editors/protobuf-mode.el" :features protobuf-mode))
  (puppet-mode status "installed" recipe
               (:name puppet-mode :description "A simple mode for editing puppet manifests" :type http :url "https://raw.github.com/puppetlabs/puppet/master/ext/emacs/puppet-mode.el" :prepare
                      (progn
