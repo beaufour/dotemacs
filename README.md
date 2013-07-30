@@ -28,22 +28,12 @@ Start by cloning this repo into `~/.emacs.d`
 
     git clone git@github.com:beaufour/dotemacs.git ~/.emacs.d
 
-Then open Emacs and install `el-get`:
-
-    ;; So the idea is that you copy/paste this code into your *scratch* buffer,
-    ;; hit C-j, and you have a working el-get.
-    (url-retrieve
-     "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-     (lambda (s)
-       (goto-char (point-max))
-       (eval-print-last-sexp)))
-
 Then put this in your `~/.emacs` file:
 
     (add-to-list 'load-path "~/.emacs.d/")
     (load "my-init")
 
-Close Emacs, and open it again, and the magic will start :)
+Open Emacs and the magic will start :)
 
 Do note that the first run will take a *long* time (as `el-get`
 downloads modules). Also the bootstrapping might not work. If it
