@@ -2,9 +2,9 @@
 # key: main
 # --
 #!/usr/bin/env python
-#
-# TODO: doc
-#
+"""
+TODO: doc
+"""
 
 from __future__ import absolute_import
 from __future__ import division
