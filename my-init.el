@@ -193,6 +193,19 @@
 (require 'json-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; c-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun my-c-mode-common-hook ()
+ ;; my customizations for all of c-mode, c++-mode, objc-mode, java-mode
+ (c-set-offset 'substatement-open 0)
+ (setq c-basic-offset 4)
+ (setq c-indent-level 4)
+ (setq tab-width 4)
+)
+
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; js2-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make js2-mode support JsLint 'global' variables, like:
