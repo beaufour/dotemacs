@@ -3,6 +3,17 @@
 ;;; Code:
 
 
+;;;### (autoloads (auto-complete) "auto-complete/auto-complete" "auto-complete/auto-complete.el"
+;;;;;;  (21089 18249 0 0))
+;;; Generated autoloads from auto-complete/auto-complete.el
+
+(autoload 'auto-complete "auto-complete/auto-complete" "\
+Start auto-completion at current point.
+
+\(fn &optional SOURCES)" t nil)
+
+;;;***
+
 ;;;### (autoloads (color-theme-initialize color-theme-submit color-theme-install
 ;;;;;;  color-theme-compare color-theme-make-snapshot color-theme-analyze-defun
 ;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
@@ -330,6 +341,71 @@ Downloads a paste from the playground and inserts it in a Go
 buffer. Tries to look for a URL at point.
 
 \(fn URL)" t nil)
+
+;;;***
+
+;;;### (autoloads (jedi:setup anything-jedi-related-names helm-jedi-related-names
+;;;;;;  jedi:ac-setup jedi:complete jedi:start-dedicated-server)
+;;;;;;  "jedi/jedi" "jedi/jedi.el" (21089 18253 0 0))
+;;; Generated autoloads from jedi/jedi.el
+
+(autoload 'jedi:start-dedicated-server "jedi/jedi" "\
+Start Jedi server dedicated to this buffer.
+This is useful, for example, when you want to use different
+`sys.path' for some buffer.  When invoked as an interactive
+command, it asks you how to start the Jedi server.  You can edit
+the command in minibuffer to specify the way Jedi server run.
+
+If you want to setup how Jedi server is started programmatically
+per-buffer/per-project basis, make `jedi:server-command' and
+`jedi:server-args' buffer local and set it in `python-mode-hook'.
+See also: `jedi:server-args'.
+
+\(fn COMMAND)" t nil)
+
+(autoload 'jedi:complete "jedi/jedi" "\
+Complete code at point.
+
+\(fn &key (expand ac-expand-on-auto-complete))" t nil)
+
+(autoload 'jedi:ac-setup "jedi/jedi" "\
+Add Jedi AC sources to `ac-sources'.
+
+If auto-completion is all you need, you can call this function instead
+of `jedi:setup', like this::
+
+   (add-hook 'python-mode-hook 'jedi:ac-setup)
+
+Note that this function calls `auto-complete-mode' if it is not
+already enabled, for people who don't call `global-auto-complete-mode'
+in their Emacs configuration.
+
+\(fn)" t nil)
+
+(autoload 'helm-jedi-related-names "jedi/jedi" "\
+Find related names of the object at point using `helm' interface.
+
+\(fn)" t nil)
+
+(autoload 'anything-jedi-related-names "jedi/jedi" "\
+Find related names of the object at point using `anything' interface.
+
+\(fn)" t nil)
+
+(autoload 'jedi:setup "jedi/jedi" "\
+Fully setup jedi.el for current buffer.
+It setups `ac-sources' (calls `jedi:ac-setup') and turns
+`jedi-mode' on.
+
+This function is intended to be called from `python-mode-hook',
+like this::
+
+       (add-hook 'python-mode-hook 'jedi:setup)
+
+You can also call this function as a command, to quickly test
+what jedi can do.
+
+\(fn)" t nil)
 
 ;;;***
 
@@ -717,17 +793,23 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("color-theme/color-theme-autoloads.el"
-;;;;;;  "dot-mode/dot-mode.el" "fuzzy/fuzzy.el" "git-emacs/git--test.el"
-;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
-;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
-;;;;;;  "git-emacs/git-status.el" "nagios-mode/nagios-mode.el" "php-mode/php-mode-test.el"
-;;;;;;  "popup/popup.el" "python-mode/python-mode.el" "python-mode/test/pars-part-output.el"
-;;;;;;  "python-mode/test/py-bug-numbered-tests.el" "python-mode/test/py-completion-tests.el"
-;;;;;;  "python-mode/test/py-shell-completion-tests.el" "python-mode/test/python-executes-test.el"
-;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-ert-tests.el"
-;;;;;;  "python-mode/test/python-mode-syntax-test.el" "python-mode/test/python-mode-test.el"
-;;;;;;  "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
+;;;### (autoloads nil nil ("auto-complete/auto-complete-config.el"
+;;;;;;  "auto-complete/auto-complete-pkg.el" "color-theme/color-theme-autoloads.el"
+;;;;;;  "ctable/ctable.el" "ctable/test-ctable.el" "deferred/concurrent-sample.el"
+;;;;;;  "deferred/concurrent.el" "deferred/deferred-samples.el" "deferred/deferred.el"
+;;;;;;  "deferred/test-concurrent.el" "deferred/test-deferred.el"
+;;;;;;  "dot-mode/dot-mode.el" "epc/epc.el" "epc/epcs.el" "epc/test-epc.el"
+;;;;;;  "fuzzy/fuzzy.el" "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
+;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
+;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "jedi/jedi-pkg.el"
+;;;;;;  "jedi/test-jedi.el" "jedi/tryout-jedi.el" "nagios-mode/nagios-mode.el"
+;;;;;;  "php-mode/php-mode-test.el" "popup/popup.el" "python-mode/python-mode.el"
+;;;;;;  "python-mode/test/pars-part-output.el" "python-mode/test/py-bug-numbered-tests.el"
+;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-shell-completion-tests.el"
+;;;;;;  "python-mode/test/python-executes-test.el" "python-mode/test/python-extended-executes-test.el"
+;;;;;;  "python-mode/test/python-mode-ert-tests.el" "python-mode/test/python-mode-syntax-test.el"
+;;;;;;  "python-mode/test/python-mode-test.el" "rhtml-mode/rhtml-erb.el"
+;;;;;;  "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
 ;;;;;;  "rhtml-mode/rhtml-ruby-hook.el" "rhtml-mode/rhtml-sgml-hacks.el"
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-auto.el" "scala-mode/tool-support/src/emacs/scala-mode-constants.el"
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-feature-electric.el"
@@ -739,7 +821,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-lib.el" "scala-mode/tool-support/src/emacs/scala-mode-navigation.el"
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-ui.el" "scala-mode/tool-support/src/emacs/scala-mode-variables.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (21089 18117 414792 0))
+;;;;;;  (21089 18260 969587 0))
 
 ;;;***
 

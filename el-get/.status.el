@@ -1,6 +1,8 @@
 ((ack status "removed" recipe nil)
  (actionscript-mode-connors status "removed" recipe nil)
- (auto-complete status "removed" recipe nil)
+ (auto-complete status "installed" recipe
+                (:name auto-complete :website "https://github.com/auto-complete/auto-complete" :description "The most intelligent auto-completion extension." :type github :pkgname "auto-complete/auto-complete" :depends
+                       (popup fuzzy)))
  (color-theme status "installed" recipe
               (:name color-theme :description "An Emacs-Lisp package with more than 50 color themes for your use. For questions about color-theme" :website "http://www.nongnu.org/color-theme/" :type http-tar :options
                      ("xzf")
@@ -8,10 +10,17 @@
                      (progn
                        (color-theme-initialize)
                        (setq color-theme-is-global t))))
+ (ctable status "installed" recipe
+         (:name ctable :description "Table Component for elisp" :type github :pkgname "kiwanami/emacs-ctable"))
+ (deferred status "installed" recipe
+   (:name deferred :description "Simple asynchronous functions for emacs lisp" :website "https://github.com/kiwanami/emacs-deferred" :type github :pkgname "kiwanami/emacs-deferred" :features "deferred"))
  (dot-mode status "installed" recipe
            (:name dot-mode :auto-generated t :type emacswiki :description "Minor mode to repeat typing or commands" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/dot-mode.el"))
  (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "4.stable" :pkgname "dimitri/el-get" :info "." :load "el-get.el"))
+ (epc status "installed" recipe
+      (:name epc :description "An RPC stack for Emacs Lisp" :type github :pkgname "kiwanami/emacs-epc" :depends
+             (deferred ctable)))
  (ethan-wspace status "installed" recipe
                (:name ethan-wspace :description "Whitespace customizations for emacs" :type github :pkgname "glasserc/ethan-wspace" :load-path "lisp/" :features ethan-wspace))
  (full-ack status "removed" recipe nil)
@@ -21,6 +30,15 @@
             (:name git-emacs :description "Yet another git emacs mode for newbies" :type github :pkgname "tsgates/git-emacs" :features git-emacs))
  (go-mode status "installed" recipe
           (:name go-mode :description "Major mode for the Go programming language" :type http :url "http://go.googlecode.com/hg/misc/emacs/go-mode.el?r=tip" :localname "go-mode.el"))
+ (jedi status "installed" recipe
+       (:name jedi :description "An awesome Python auto-completion for Emacs" :type github :pkgname "tkf/emacs-jedi" :build
+              (("make" "requirements"))
+              :build/windows-nt
+              (("make" "requirements" "PYTHON=python.exe" "BINDIR=Scripts"))
+              :build/berkeley-unix
+              (("gmake" "requirements"))
+              :submodule nil :depends
+              (epc auto-complete)))
  (js2-mode status "installed" recipe
            (:name js2-mode :website "https://github.com/mooz/js2-mode#readme" :description "An improved JavaScript editing mode" :type github :pkgname "mooz/js2-mode" :prepare
                   (autoload 'js2-mode "js2-mode" nil t)))

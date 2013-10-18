@@ -115,6 +115,13 @@
   (highlight-lines-matching-regexp "pdb.set_trace()"))
 (add-hook 'python-mode-hook 'annotate-pdb)
 
+;;
+;; Jedi
+;; https://github.com/tkf/emacs-jedi
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)                      ; optional
+(setq jedi:complete-on-dot t)                 ; optional
+
 ;; TODO: It looks like python-mode has flymake support built in, but I
 ;; can't get this to work:
 ;;
