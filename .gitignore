@@ -1,5 +1,6 @@
 *.elc
-auto-save-list/
 *~
+/elpa
 ac-comphist.dat
+auto-save-list/
 el-get/*/
