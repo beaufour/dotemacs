@@ -363,13 +363,16 @@ Major mode for editing JavaScript code.
 ;;;***
 
 ;;;### (autoloads (gfm-mode markdown-mode) "markdown-mode/markdown-mode"
-;;;;;;  "markdown-mode/markdown-mode.el" (20900 49782 0 0))
+;;;;;;  "markdown-mode/markdown-mode.el" (21019 46014 0 0))
 ;;; Generated autoloads from markdown-mode/markdown-mode.el
 
 (autoload 'markdown-mode "markdown-mode/markdown-mode" "\
 Major mode for editing Markdown files.
 
 \(fn)" t nil)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 
 (autoload 'gfm-mode "markdown-mode/markdown-mode" "\
 Major mode for editing GitHub Flavored Markdown files.
@@ -438,6 +441,38 @@ Major mode for editing puppet manifests.
 
 The variable puppet-indent-level controls the amount of indentation.
 \\{puppet-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads (pylookup-lookup-at-point pylookup-update-all pylookup-update
+;;;;;;  pylookup-set-search-option pylookup-lookup) "pylookup/pylookup"
+;;;;;;  "pylookup/pylookup.el" (21089 15485 0 0))
+;;; Generated autoloads from pylookup/pylookup.el
+
+(autoload 'pylookup-lookup "pylookup/pylookup" "\
+Lookup SEARCH-TERM in the Python HTML indexes.
+
+\(fn SEARCH-TERM)" t nil)
+
+(autoload 'pylookup-set-search-option "pylookup/pylookup" "\
+Set search option interactively
+
+\(fn OPTION-STRING)" t nil)
+
+(autoload 'pylookup-update "pylookup/pylookup" "\
+Run pylookup-update and create the database at `pylookup-db-file'.
+
+\(fn SRC &optional APPEND)" t nil)
+
+(autoload 'pylookup-update-all "pylookup/pylookup" "\
+Run pylookup-update for all sources and create the database at `pylookup-db-file'.
+
+\(fn)" t nil)
+
+(autoload 'pylookup-lookup-at-point "pylookup/pylookup" "\
+Query the for string with help of word read at point and call `pylookup-lookup'
 
 \(fn)" t nil)
 
@@ -527,7 +562,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "python-mode/python-mode.el" "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el"
 ;;;;;;  "rhtml-mode/rhtml-navigation.el" "rhtml-mode/rhtml-ruby-hook.el"
 ;;;;;;  "rhtml-mode/rhtml-sgml-hacks.el" "yasnippet/yasnippet-debug.el"
-;;;;;;  "yasnippet/yasnippet-tests.el") (20984 9219 95904 0))
+;;;;;;  "yasnippet/yasnippet-tests.el") (21089 15486 284967 0))
 
 ;;;***
 

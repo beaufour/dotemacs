@@ -8,6 +8,8 @@
                      (progn
                        (color-theme-initialize)
                        (setq color-theme-is-global t))))
+ (dot-mode status "installed" recipe
+           (:name dot-mode :auto-generated t :type emacswiki :description "Minor mode to repeat typing or commands" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/dot-mode.el"))
  (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "4.stable" :pkgname "dimitri/el-get" :features el-get :info "." :load "el-get.el"))
  (ethan-wspace status "installed" recipe
@@ -44,6 +46,15 @@
                        (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests" t)
                        (add-to-list 'auto-mode-alist
                                     '("\\.pp$" . puppet-mode)))))
+ (pylookup status "installed" recipe
+           (:name pylookup :description "Emacs mode for searching python documents with convenience" :type github :pkgname "tsgates/pylookup" :prepare
+                  (progn
+                    (setq pylookup-program
+                          (expand-file-name "pylookup.py")
+                          pylookup-db-file
+                          (expand-file-name "pylookup.db"))
+                    (autoload 'pylookup-lookup "pylookup" "Lookup SEARCH-TERM in the Python HTML indexes." t)
+                    (autoload 'pylookup-update "pylookup" "Run pylookup-update and create the database at `pylookup-db-file'." t))))
  (python-mode status "installed" recipe
               (:type github :username "emacsmirror" :name python-mode :type emacsmirror :description "Major mode for editing Python programs" :features
                      (python-mode doctest-mode)
@@ -60,6 +71,12 @@
                       (autoload 'rhtml-mode "rhtml-mode" nil t)
                       (add-to-list 'auto-mode-alist
                                    '("\\.html.erb$" . rhtml-mode)))))
+ (scala-mode status "installed" recipe
+             (:name scala-mode :description "Major mode for editing Scala code." :type svn :url "http://lampsvn.epfl.ch/svn-repos/scala/scala-tool-support/trunk/src/emacs/" :build
+                    ("make")
+                    :load-path
+                    (".")
+                    :features scala-mode-auto))
  (yaml-mode status "installed" recipe
             (:name yaml-mode :description "Simple major mode to edit YAML file for emacs" :type github :pkgname "yoshiki/yaml-mode" :prepare
                    (progn

@@ -107,6 +107,14 @@
 
 (add-hook 'post-command-hook 'my-flymake-show-help)
 
+;;
+;; Annotate special lines
+(defun annotate-pdb ()
+  (interactive)
+  (highlight-lines-matching-regexp "import pdb")
+  (highlight-lines-matching-regexp "pdb.set_trace()"))
+(add-hook 'python-mode-hook 'annotate-pdb)
+
 ;; TODO: It looks like python-mode has flymake support built in, but I
 ;; can't get this to work:
 ;;

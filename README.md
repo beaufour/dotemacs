@@ -64,3 +64,14 @@ ops/backend stuff. Some "highlights":
 * there are some custom snippets like `main`. Try typing `main + TAB`
   in a new file (or `mainc + TAB` for the "chartbeat version"). See
   inside `~/.emacs.d/snippets` for the more/sources).
+
+
+pylookup
+========
+
+After installation you need to generate the database for
+`pylookup`. This command generates it for Python, scipy, numpy, and
+matplotlib:
+
+    (cd ~/.emacs.d/el-get/pylookup && ./pylookup.py -u http://docs.python.org && ./pylookup.py -a -u http://docs.scipy.org/doc/numpy/genindex.html && ./pylookup.py -a -u http://docs.scipy.org/doc/scipy/reference/genindex.html && ./pylookup.py -a -u http://matplotlib.sourceforge.net/genindex.html)
+
