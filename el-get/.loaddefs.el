@@ -144,8 +144,9 @@ Initialize the color theme package by loading color-theme-libraries.
 ;;;***
 
 ;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
-;;;;;;  el-get-self-update el-get-update-all el-get-version) "el-get/el-get"
-;;;;;;  "el-get/el-get.el" (20900 49648 0 0))
+;;;;;;  el-get-self-update el-get-update-packages-of-type el-get-update-all
+;;;;;;  el-get-version) "el-get/el-get" "el-get/el-get.el" (21089
+;;;;;;  17471 0 0))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -157,6 +158,11 @@ Message the current el-get version
 Performs update of all installed packages.
 
 \(fn &optional NO-PROMPT)" t nil)
+
+(autoload 'el-get-update-packages-of-type "el-get/el-get" "\
+Update all installed packages of type TYPE.
+
+\(fn TYPE)" t nil)
 
 (autoload 'el-get-self-update "el-get/el-get" "\
 Update el-get itself.  The standard recipe takes care of reloading the code.
@@ -182,7 +188,7 @@ Compute the checksum of the given package, and put it in the kill-ring
 ;;;***
 
 ;;;### (autoloads (el-get-list-packages) "el-get/el-get-list-packages"
-;;;;;;  "el-get/el-get-list-packages.el" (20900 49648 0 0))
+;;;;;;  "el-get/el-get-list-packages.el" (21089 17471 0 0))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -193,7 +199,7 @@ Display a list of packages.
 ;;;***
 
 ;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "ethan-wspace/lisp/ethan-wspace"
-;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (20900 49769 0 0))
+;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (21089 17786 0 0))
 ;;; Generated autoloads from ethan-wspace/lisp/ethan-wspace.el
 
 (autoload 'ethan-wspace-mode "ethan-wspace/lisp/ethan-wspace" "\
@@ -227,7 +233,7 @@ See `ethan-wspace-mode' for more information on Ethan-Wspace mode.
 ;;;***
 
 ;;;### (autoloads (git-reblame git-blame-mode) "git-emacs/git-blame"
-;;;;;;  "git-emacs/git-blame.el" (20900 49774 0 0))
+;;;;;;  "git-emacs/git-blame.el" (21089 17789 0 0))
 ;;; Generated autoloads from git-emacs/git-blame.el
 
 (autoload 'git-blame-mode "git-emacs/git-blame" "\
@@ -245,7 +251,7 @@ Recalculate all blame information in the current buffer
 ;;;***
 
 ;;;### (autoloads (go-download-play godoc gofmt-before-save go-mode)
-;;;;;;  "go-mode/go-mode" "go-mode/go-mode.el" (20900 49776 0 0))
+;;;;;;  "go-mode/go-mode" "go-mode/go-mode.el" (21089 17791 0 0))
 ;;; Generated autoloads from go-mode/go-mode.el
 
 (autoload 'go-mode "go-mode/go-mode" "\
@@ -274,6 +280,7 @@ The following extra functions are defined:
 - `go-play-buffer' and `go-play-region'
 - `go-download-play'
 - `godef-describe' and `godef-jump'
+- `go-coverage'
 
 If you want to automatically run `gofmt' before saving a file,
 add the following hook to your emacs configuration:
@@ -328,7 +335,7 @@ buffer. Tries to look for a URL at point.
 
 ;;;### (autoloads (js2-imenu-extras-mode js2-imenu-extras-setup)
 ;;;;;;  "js2-mode/js2-imenu-extras" "js2-mode/js2-imenu-extras.el"
-;;;;;;  (20900 49778 0 0))
+;;;;;;  (21089 17793 0 0))
 ;;; Generated autoloads from js2-mode/js2-imenu-extras.el
 
 (autoload 'js2-imenu-extras-setup "js2-mode/js2-imenu-extras" "\
@@ -344,7 +351,7 @@ Toggle Imenu support for frameworks and structural patterns.
 ;;;***
 
 ;;;### (autoloads (js2-mode js2-minor-mode) "js2-mode/js2-mode" "js2-mode/js2-mode.el"
-;;;;;;  (20900 49778 0 0))
+;;;;;;  (21089 17793 0 0))
 ;;; Generated autoloads from js2-mode/js2-mode.el
 
 (autoload 'js2-minor-mode "js2-mode/js2-mode" "\
@@ -363,7 +370,7 @@ Major mode for editing JavaScript code.
 ;;;***
 
 ;;;### (autoloads (gfm-mode markdown-mode) "markdown-mode/markdown-mode"
-;;;;;;  "markdown-mode/markdown-mode.el" (21019 46014 0 0))
+;;;;;;  "markdown-mode/markdown-mode.el" (21089 17797 0 0))
 ;;; Generated autoloads from markdown-mode/markdown-mode.el
 
 (autoload 'markdown-mode "markdown-mode/markdown-mode" "\
@@ -382,7 +389,7 @@ Major mode for editing GitHub Flavored Markdown files.
 ;;;***
 
 ;;;### (autoloads (nginx-mode) "nginx-mode/nginx-mode" "nginx-mode/nginx-mode.el"
-;;;;;;  (20900 49786 0 0))
+;;;;;;  (21089 17801 0 0))
 ;;; Generated autoloads from nginx-mode/nginx-mode.el
 
 (autoload 'nginx-mode "nginx-mode/nginx-mode" "\
@@ -395,11 +402,16 @@ The variable nginx-indent-level controls the amount of indentation.
 
 ;;;***
 
-;;;### (autoloads (php-mode php) "php-mode/php-mode" "php-mode/php-mode.el"
-;;;;;;  (20900 49788 0 0))
+;;;### (autoloads (php-mode php-extra-constants php) "php-mode/php-mode"
+;;;;;;  "php-mode/php-mode.el" (21089 17802 0 0))
 ;;; Generated autoloads from php-mode/php-mode.el
 
 (let ((loads (get 'php 'custom-loads))) (if (member '"php-mode/php-mode" loads) nil (put 'php 'custom-loads (cons '"php-mode/php-mode" loads))))
+
+(defvar php-extra-constants 'nil "\
+A list of additional strings to treat as PHP constants.")
+
+(custom-autoload 'php-extra-constants "php-mode/php-mode" t)
 
 (add-to-list 'interpreter-mode-alist (cons "php" 'php-mode))
 
@@ -410,12 +422,12 @@ Major mode for editing PHP code.
 
 \(fn)" t nil)
 
-(dolist (pattern '("\\.php[s345t]?\\'" "\\.phtml\\'")) (add-to-list 'auto-mode-alist `(,pattern . php-mode)))
+(dolist (pattern '("\\.php[s345t]?\\'" "\\.phtml\\'" "Amkfile" "\\.amk$")) (add-to-list 'auto-mode-alist `(,pattern . php-mode)))
 
 ;;;***
 
 ;;;### (autoloads (protobuf-mode) "protobuf-mode/protobuf-mode" "protobuf-mode/protobuf-mode.el"
-;;;;;;  (20966 61912 0 0))
+;;;;;;  (21089 17807 0 0))
 ;;; Generated autoloads from protobuf-mode/protobuf-mode.el
  (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
 
@@ -433,22 +445,21 @@ Key bindings:
 ;;;***
 
 ;;;### (autoloads (puppet-mode) "puppet-mode/puppet-mode" "puppet-mode/puppet-mode.el"
-;;;;;;  (20900 49791 0 0))
+;;;;;;  (21089 17809 0 0))
 ;;; Generated autoloads from puppet-mode/puppet-mode.el
 
 (autoload 'puppet-mode "puppet-mode/puppet-mode" "\
-Major mode for editing puppet manifests.
 
-The variable puppet-indent-level controls the amount of indentation.
-\\{puppet-mode-map}
 
 \(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.pp\\'" . puppet-mode))
 
 ;;;***
 
 ;;;### (autoloads (pylookup-lookup-at-point pylookup-update-all pylookup-update
 ;;;;;;  pylookup-set-search-option pylookup-lookup) "pylookup/pylookup"
-;;;;;;  "pylookup/pylookup.el" (21089 15485 0 0))
+;;;;;;  "pylookup/pylookup.el" (21089 17823 0 0))
 ;;; Generated autoloads from pylookup/pylookup.el
 
 (autoload 'pylookup-lookup "pylookup/pylookup" "\
@@ -478,8 +489,82 @@ Query the for string with help of word read at point and call `pylookup-lookup'
 
 ;;;***
 
+;;;### (autoloads (doctest-mode doctest-register-mmm-classes) "python-mode/test/doctest-mode"
+;;;;;;  "python-mode/test/doctest-mode.el" (21089 18093 0 0))
+;;; Generated autoloads from python-mode/test/doctest-mode.el
+
+(autoload 'doctest-register-mmm-classes "python-mode/test/doctest-mode" "\
+Register doctest's mmm classes, allowing doctest to be used as a
+submode region in other major modes, such as python-mode and rst-mode.
+Two classes are registered:
+
+`doctest-docstring'
+
+    Used to edit docstrings containing doctest examples in python-
+    mode.  Docstring submode regions start and end with triple-quoted
+    strings (\"\"\").  In order to avoid confusing start-string
+    markers and end-string markers, all triple-quote strings in the
+    buffer are treated as submode regions (even if they're not
+    actually docstrings).  Use (C-c % C-d) to insert a new doctest-
+    docstring region.  When `doctest-execute' (C-c C-c) is called
+    inside a doctest-docstring region, it executes just the current
+    docstring.  The globals for this execution are constructed by
+    importing the current buffer's contents in Python.
+
+`doctest-example'
+
+    Used to edit doctest examples in text-editing modes, such as
+    `rst-mode' or `text-mode'.  Docstring submode regions start with
+    optionally indented prompts (>>>) and end with blank lines.  Use
+    (C-c % C-e) to insert a new doctest-example region.  When
+    `doctest-execute' (C-c C-c) is called inside a doctest-example
+    region, it executes all examples in the buffer.
+
+If ADD-MODE-EXT-CLASSES is true, then register the new classes in
+`mmm-mode-ext-classes-alist', which will cause them to be used by
+default in the following modes:
+
+    doctest-docstring:  python-mode
+    doctest-example:    rst-mode
+
+If FIX-MMM-FONTIFY-REGION-BUG is true, then register a hook that will
+fix a bug in `mmm-fontify-region' that affects some (but not all)
+versions of emacs.  (See `doctest-fixed-mmm-fontify-region' for more
+info.)
+
+\(fn &optional ADD-MODE-EXT-CLASSES FIX-MMM-FONTIFY-REGION-BUG)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.doctest$" . doctest-mode))
+
+(autoload 'doctest-mode "python-mode/test/doctest-mode" "\
+A major mode for editing text files that contain Python
+doctest examples.  Doctest is a testing framework for Python that
+emulates an interactive session, and checks the result of each
+command.  For more information, see the Python library reference:
+<http://docs.python.org/lib/module-doctest.html>
+
+`doctest-mode' defines three kinds of line, each of which is
+treated differently:
+
+  - 'Source lines' are lines consisting of a Python prompt
+    ('>>>' or '...'), followed by source code.  Source lines are
+    colored (similarly to `python-mode') and auto-indented.
+
+  - 'Output lines' are non-blank lines immediately following
+    source lines.  They are colored using several doctest-
+    specific output faces.
+
+  - 'Text lines' are any other lines.  They are not processed in
+    any special way.
+
+\\{doctest-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (rhtml-mode) "rhtml-mode/rhtml-mode" "rhtml-mode/rhtml-mode.el"
-;;;;;;  (20900 49813 0 0))
+;;;;;;  (21089 18094 0 0))
 ;;; Generated autoloads from rhtml-mode/rhtml-mode.el
 
 (autoload 'rhtml-mode "rhtml-mode/rhtml-mode" "\
@@ -491,8 +576,89 @@ Embedded Ruby Mode (RHTML)
 
 ;;;***
 
+;;;### (autoloads (scala-mode) "scala-mode/tool-support/src/emacs/scala-mode"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode.el" (21089
+;;;;;;  18113 0 0))
+;;; Generated autoloads from scala-mode/tool-support/src/emacs/scala-mode.el
+
+(autoload 'scala-mode "scala-mode/tool-support/src/emacs/scala-mode" "\
+Major mode for editing Scala code.
+When started, run `scala-mode-hook'.
+\\{scala-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads (scala-quit-interpreter scala-load-file scala-eval-buffer
+;;;;;;  scala-eval-definition scala-eval-region scala-switch-to-interpreter
+;;;;;;  scala-run-scala scala-interpreter-running-p-1) "scala-mode/tool-support/src/emacs/scala-mode-inf"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-inf.el" (21089
+;;;;;;  18113 0 0))
+;;; Generated autoloads from scala-mode/tool-support/src/emacs/scala-mode-inf.el
+
+(autoload 'scala-interpreter-running-p-1 "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+
+
+\(fn)" nil nil)
+
+(autoload 'scala-run-scala "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Run a Scala interpreter in an Emacs buffer
+
+\(fn CMD-LINE)" t nil)
+
+(autoload 'scala-switch-to-interpreter "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Switch to buffer containing the interpreter
+
+\(fn)" t nil)
+
+(autoload 'scala-eval-region "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Send current region to Scala interpreter.
+
+\(fn START END)" t nil)
+
+(autoload 'scala-eval-definition "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Send the current 'definition' to the Scala interpreter.
+This function's idea of a definition is the block of text ending
+in the current line (or the first non-empty line going
+backwards), and begins in the first line that is not empty and
+does not start with whitespace or '{'.
+
+For example:
+
+println( \"aja\")
+println( \"hola\" )
+
+if the cursor is somewhere in the second print statement, the
+interpreter should output 'hola'.
+
+In the following case, if the cursor is in the second line, then
+the complete function definition will be send to the interpreter:
+
+def foo =
+  1 + 2
+
+\(fn)" t nil)
+
+(autoload 'scala-eval-buffer "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Send whole buffer to Scala interpreter.
+
+\(fn)" t nil)
+
+(autoload 'scala-load-file "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Load a file in the Scala interpreter.
+
+\(fn FILE-NAME)" t nil)
+
+(autoload 'scala-quit-interpreter "scala-mode/tool-support/src/emacs/scala-mode-inf" "\
+Quit Scala interpreter.
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (yaml-mode yaml) "yaml-mode/yaml-mode" "yaml-mode/yaml-mode.el"
-;;;;;;  (20900 49814 0 0))
+;;;;;;  (21089 18115 0 0))
 ;;; Generated autoloads from yaml-mode/yaml-mode.el
 
 (let ((loads (get 'yaml 'custom-loads))) (if (member '"yaml-mode/yaml-mode" loads) nil (put 'yaml 'custom-loads (cons '"yaml-mode/yaml-mode" loads))))
@@ -509,7 +675,7 @@ Simple mode to edit YAML.
 ;;;***
 
 ;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet/yasnippet"
-;;;;;;  "yasnippet/yasnippet.el" (20900 49818 0 0))
+;;;;;;  "yasnippet/yasnippet.el" (21089 18117 0 0))
 ;;; Generated autoloads from yasnippet/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet/yasnippet" "\
@@ -552,17 +718,28 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;***
 
 ;;;### (autoloads nil nil ("color-theme/color-theme-autoloads.el"
-;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
-;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
-;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "git-emacs/git--test.el"
+;;;;;;  "dot-mode/dot-mode.el" "fuzzy/fuzzy.el" "git-emacs/git--test.el"
 ;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
 ;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
 ;;;;;;  "git-emacs/git-status.el" "nagios-mode/nagios-mode.el" "php-mode/php-mode-test.el"
-;;;;;;  "python-mode/python-mode.el" "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el"
-;;;;;;  "rhtml-mode/rhtml-navigation.el" "rhtml-mode/rhtml-ruby-hook.el"
-;;;;;;  "rhtml-mode/rhtml-sgml-hacks.el" "yasnippet/yasnippet-debug.el"
-;;;;;;  "yasnippet/yasnippet-tests.el") (21089 15486 284967 0))
+;;;;;;  "popup/popup.el" "python-mode/python-mode.el" "python-mode/test/pars-part-output.el"
+;;;;;;  "python-mode/test/py-bug-numbered-tests.el" "python-mode/test/py-completion-tests.el"
+;;;;;;  "python-mode/test/py-shell-completion-tests.el" "python-mode/test/python-executes-test.el"
+;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-ert-tests.el"
+;;;;;;  "python-mode/test/python-mode-syntax-test.el" "python-mode/test/python-mode-test.el"
+;;;;;;  "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
+;;;;;;  "rhtml-mode/rhtml-ruby-hook.el" "rhtml-mode/rhtml-sgml-hacks.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-auto.el" "scala-mode/tool-support/src/emacs/scala-mode-constants.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-feature-electric.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-feature-speedbar.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-feature-tags.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-feature.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-fontlock.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-indent.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-lib.el" "scala-mode/tool-support/src/emacs/scala-mode-navigation.el"
+;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-ui.el" "scala-mode/tool-support/src/emacs/scala-mode-variables.el"
+;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
+;;;;;;  (21089 18117 414792 0))
 
 ;;;***
 

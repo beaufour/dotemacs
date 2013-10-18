@@ -14,6 +14,8 @@ depend on a few external utilities though:
 * [pyflakes](http://pypi.python.org/pypi/pyflakes)
 * [pep8](http://pypi.python.org/pypi/pep8)
 * [ag](https://github.com/ggreer/the_silver_searcher)
+* [git](https://github.com/ggreer/the_silver_searcher)
+* [bzr](http://bazaar.canonical.com/en/)
 
 Note that if you don't run Emacs from the shell (on OS X) these need
 to be in your default _PATH_, which is `/usr/bin`, so if you've
