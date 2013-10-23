@@ -76,4 +76,3 @@ After installation you need to generate the database for
 matplotlib:
 
     (cd ~/.emacs.d/el-get/pylookup && ./pylookup.py -u http://docs.python.org && ./pylookup.py -a -u http://docs.scipy.org/doc/numpy/genindex.html && ./pylookup.py -a -u http://docs.scipy.org/doc/scipy/reference/genindex.html && ./pylookup.py -a -u http://matplotlib.sourceforge.net/genindex.html)
-
