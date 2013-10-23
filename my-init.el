@@ -318,3 +318,10 @@
      ;; This puts message in *Message* twice, but minibuffer output
      ;; looks better.
      (message (concat "Wrote " (buffer-file-name))))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Misc
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Mavericks seems to default to / for some reason, fix that
+(cd (getenv "HOME"))
