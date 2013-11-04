@@ -25,6 +25,8 @@
 (setq default-frame-alist '(
                 (width . 90)
                 (height . 47) ))
+;; Default to 100 characters per line
+(setq-default fill-column 100)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; IDO mode for buffer switching
