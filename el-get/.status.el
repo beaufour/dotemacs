@@ -42,6 +42,12 @@
  (js2-mode status "installed" recipe
            (:name js2-mode :website "https://github.com/mooz/js2-mode#readme" :description "An improved JavaScript editing mode" :type github :pkgname "mooz/js2-mode" :prepare
                   (autoload 'js2-mode "js2-mode" nil t)))
+ (lorem-ipsum status "installed" recipe
+              (:name lorem-ipsum :description "Lorem Ipsum Generator" :type emacswiki :features lorem-ipsum :prepare
+                     (progn
+                       (autoload 'Lorem-ipsum-insert-paragraphs "lorem-ipsum")
+                       (autoload 'Lorem-ipsum-insert-sentences "lorem-ipsum")
+                       (autoload 'Lorem-ipsum-insert-list "lorem-ipsum"))))
  (markdown-mode status "installed" recipe
                 (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type git :url "git://jblevins.org/git/markdown-mode.git" :before
                        (add-to-list 'auto-mode-alist

@@ -802,14 +802,14 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "fuzzy/fuzzy.el" "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
 ;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
 ;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "jedi/jedi-pkg.el"
-;;;;;;  "jedi/test-jedi.el" "jedi/tryout-jedi.el" "nagios-mode/nagios-mode.el"
-;;;;;;  "php-mode/php-mode-test.el" "popup/popup.el" "python-mode/python-mode.el"
-;;;;;;  "python-mode/test/pars-part-output.el" "python-mode/test/py-bug-numbered-tests.el"
-;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-shell-completion-tests.el"
-;;;;;;  "python-mode/test/python-executes-test.el" "python-mode/test/python-extended-executes-test.el"
-;;;;;;  "python-mode/test/python-mode-ert-tests.el" "python-mode/test/python-mode-syntax-test.el"
-;;;;;;  "python-mode/test/python-mode-test.el" "rhtml-mode/rhtml-erb.el"
-;;;;;;  "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
+;;;;;;  "jedi/test-jedi.el" "jedi/tryout-jedi.el" "lorem-ipsum/lorem-ipsum.el"
+;;;;;;  "nagios-mode/nagios-mode.el" "php-mode/php-mode-test.el"
+;;;;;;  "popup/popup.el" "python-mode/python-mode.el" "python-mode/test/pars-part-output.el"
+;;;;;;  "python-mode/test/py-bug-numbered-tests.el" "python-mode/test/py-completion-tests.el"
+;;;;;;  "python-mode/test/py-shell-completion-tests.el" "python-mode/test/python-executes-test.el"
+;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-ert-tests.el"
+;;;;;;  "python-mode/test/python-mode-syntax-test.el" "python-mode/test/python-mode-test.el"
+;;;;;;  "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
 ;;;;;;  "rhtml-mode/rhtml-ruby-hook.el" "rhtml-mode/rhtml-sgml-hacks.el"
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-auto.el" "scala-mode/tool-support/src/emacs/scala-mode-constants.el"
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-feature-electric.el"
@@ -821,7 +821,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-lib.el" "scala-mode/tool-support/src/emacs/scala-mode-navigation.el"
 ;;;;;;  "scala-mode/tool-support/src/emacs/scala-mode-ui.el" "scala-mode/tool-support/src/emacs/scala-mode-variables.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (21089 18260 969587 0))
+;;;;;;  (21113 20489 67652 0))
 
 ;;;***
 
