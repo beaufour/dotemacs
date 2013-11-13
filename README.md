@@ -13,6 +13,7 @@ depend on a few external utilities though:
 
 * [pyflakes](http://pypi.python.org/pypi/pyflakes)
 * [pep8](http://pypi.python.org/pypi/pep8)
+* [virtualenv](http://www.virtualenv.org/)
 * [ag](https://github.com/ggreer/the_silver_searcher)
 * [git](https://github.com/ggreer/the_silver_searcher)
 * [bzr](http://bazaar.canonical.com/en/)
