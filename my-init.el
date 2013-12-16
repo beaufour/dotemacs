@@ -173,7 +173,7 @@
 ;; Global-FF mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'globalff)
-(setq globalff-search-location (concat (getenv "HOME") "/superfly"))
+(setq globalff-search-location (concat (getenv "HOME") "/repos"))
 (global-set-key [?\C-c ?\C-o] 'globalff)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
