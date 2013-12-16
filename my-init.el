@@ -255,6 +255,21 @@
 (global-set-key [?\C-c ?\C-g] 'my-git-status)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; flyspell-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(dolist (hook '(markdown-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+
+ (add-hook 'c++-mode-hook
+          (lambda ()
+            (flyspell-prog-mode)
+          ))
+ (add-hook 'python-mode-hook
+          (lambda ()
+            (flyspell-prog-mode)
+          ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setup extension -> mode mappings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq auto-mode-alist
