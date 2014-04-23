@@ -21,6 +21,11 @@
  (epc status "installed" recipe
       (:name epc :description "An RPC stack for Emacs Lisp" :type github :pkgname "kiwanami/emacs-epc" :depends
              (deferred ctable)))
+ (ess status "installed" recipe
+      (:name ess :description "Emacs Speaks Statistics: statistical programming within Emacs" :type github :pkgname "emacs-ess/ESS" :website "http://ess.r-project.org/" :info "doc/info/" :build
+             `(("make" "clean" "all" ,(concat "EMACS="
+                                              (shell-quote-argument el-get-emacs))))
+             :load "ess-autoloads.el"))
  (ethan-wspace status "installed" recipe
                (:name ethan-wspace :description "Whitespace customizations for emacs" :type github :pkgname "glasserc/ethan-wspace" :load-path "lisp/" :features ethan-wspace))
  (full-ack status "removed" recipe nil)
@@ -96,12 +101,8 @@
                       (autoload 'rhtml-mode "rhtml-mode" nil t)
                       (add-to-list 'auto-mode-alist
                                    '("\\.html.erb$" . rhtml-mode)))))
- (scala-mode status "installed" recipe
-             (:name scala-mode :description "Major mode for editing Scala code." :type git :url "https://github.com/scala/scala-dist.git" :build
-                    `(("make -C tool-support/src/emacs" ,(concat "ELISP_COMMAND=" el-get-emacs)))
-                    :load-path
-                    ("tool-support/src/emacs")
-                    :features scala-mode-auto))
+ (scala-mode2 status "installed" recipe
+              (:name scala-mode2 :website "https://github.com/hvesalai/scala-mode2" :description "A new scala-mode for Emacs 24" :type github :pkgname "hvesalai/scala-mode2" :load-path "." :features scala-mode2))
  (yaml-mode status "installed" recipe
             (:name yaml-mode :description "Simple major mode to edit YAML file for emacs" :type github :pkgname "yoshiki/yaml-mode"))
  (yasnippet status "installed" recipe
