@@ -181,10 +181,8 @@ Initialize the color theme package by loading color-theme-libraries.
 
 ;;;***
 
-;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
-;;;;;;  el-get-self-update el-get-update-packages-of-type el-get-update-all
-;;;;;;  el-get-version) "el-get/el-get" "el-get/el-get.el" (21271
-;;;;;;  13723 0 0))
+;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (21336 2721
+;;;;;;  0 0))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -225,8 +223,8 @@ Compute the checksum of the given package, and put it in the kill-ring
 
 ;;;***
 
-;;;### (autoloads (el-get-list-packages) "el-get/el-get-list-packages"
-;;;;;;  "el-get/el-get-list-packages.el" (21271 13723 0 0))
+;;;### (autoloads nil "el-get/el-get-list-packages" "el-get/el-get-list-packages.el"
+;;;;;;  (21336 2721 0 0))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -859,11 +857,17 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "ctable/ctable.el" "ctable/test-ctable.el" "deferred/concurrent-sample.el"
 ;;;;;;  "deferred/concurrent.el" "deferred/deferred-samples.el" "deferred/deferred.el"
 ;;;;;;  "deferred/test-concurrent.el" "deferred/test-deferred.el"
-;;;;;;  "dot-mode/dot-mode.el" "el-get/el-get-autoloads.el" "el-get/el-get-build.el"
-;;;;;;  "el-get/el-get-byte-compile.el" "el-get/el-get-core.el" "el-get/el-get-custom.el"
-;;;;;;  "el-get/el-get-dependencies.el" "el-get/el-get-install.el"
-;;;;;;  "el-get/el-get-methods.el" "el-get/el-get-notify.el" "el-get/el-get-recipes.el"
-;;;;;;  "el-get/el-get-status.el" "epc/epc.el" "epc/epcs.el" "epc/test-epc.el"
+;;;;;;  "dot-mode/dot-mode.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
+;;;;;;  "ensime/dist/elisp/auto-complete.el" "ensime/dist/elisp/ensime-auto-complete.el"
+;;;;;;  "ensime/dist/elisp/ensime-builder.el" "ensime/dist/elisp/ensime-comint-utils.el"
+;;;;;;  "ensime/dist/elisp/ensime-config.el" "ensime/dist/elisp/ensime-debug.el"
+;;;;;;  "ensime/dist/elisp/ensime-doc.el" "ensime/dist/elisp/ensime-inf.el"
+;;;;;;  "ensime/dist/elisp/ensime-refactor.el" "ensime/dist/elisp/ensime-sbt.el"
+;;;;;;  "ensime/dist/elisp/ensime-scalex.el" "ensime/dist/elisp/ensime-search.el"
+;;;;;;  "ensime/dist/elisp/ensime-semantic-highlight.el" "ensime/dist/elisp/ensime-test.el"
+;;;;;;  "ensime/dist/elisp/ensime-ui.el" "ensime/dist/elisp/ensime-undo.el"
+;;;;;;  "ensime/dist/elisp/ensime.el" "ensime/dist/elisp/fuzzy.el"
+;;;;;;  "ensime/dist/elisp/popup.el" "epc/epc.el" "epc/epcs.el" "epc/test-epc.el"
 ;;;;;;  "ess/ess-autoloads.el" "ess/lisp/ess-arc-d.el" "ess/lisp/ess-bugs-d.el"
 ;;;;;;  "ess/lisp/ess-bugs-l.el" "ess/lisp/ess-comp.el" "ess/lisp/ess-compat.el"
 ;;;;;;  "ess/lisp/ess-custom.el" "ess/lisp/ess-dde.el" "ess/lisp/ess-debug.el"
@@ -888,7 +892,8 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
 ;;;;;;  "git-emacs/git-status.el" "jedi/jedi-pkg.el" "jedi/test-jedi.el"
 ;;;;;;  "jedi/tryout-jedi.el" "lorem-ipsum/lorem-ipsum.el" "nagios-mode/nagios-mode.el"
-;;;;;;  "php-mode/php-mode-test.el" "popup/popup.el" "python-mode/python-mode.el"
+;;;;;;  "php-mode/php-mode-test.el" "popup/popup.el" "python-environment/python-environment.el"
+;;;;;;  "python-environment/test-python-environment.el" "python-mode/python-mode.el"
 ;;;;;;  "python-mode/test/pars-part-output.el" "python-mode/test/py-bug-numbered-tests.el"
 ;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-shell-completion-tests.el"
 ;;;;;;  "python-mode/test/python-executes-test.el" "python-mode/test/python-extended-executes-test.el"
@@ -901,7 +906,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "scala-mode2/scala-mode2-paragraph.el" "scala-mode2/scala-mode2-pkg.el"
 ;;;;;;  "scala-mode2/scala-mode2-sbt.el" "scala-mode2/scala-mode2-syntax.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (21335 62433 980745 0))
+;;;;;;  (21336 7669 345690 0))
 
 ;;;***
 

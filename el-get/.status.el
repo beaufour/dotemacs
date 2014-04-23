@@ -2,7 +2,12 @@
  (actionscript-mode-connors status "removed" recipe nil)
  (auto-complete status "installed" recipe
                 (:name auto-complete :website "https://github.com/auto-complete/auto-complete" :description "The most intelligent auto-completion extension." :type github :pkgname "auto-complete/auto-complete" :depends
-                       (popup fuzzy)))
+                       (popup fuzzy)
+                       :features auto-complete-config :post-init
+                       (progn
+                         (add-to-list 'ac-dictionary-directories
+                                      (expand-file-name "dict" default-directory))
+                         (ac-config-default))))
  (color-theme status "installed" recipe
               (:name color-theme :description "An Emacs-Lisp package with more than 50 color themes for your use. For questions about color-theme" :website "http://www.nongnu.org/color-theme/" :type http-tar :options
                      ("xzf")
@@ -13,11 +18,20 @@
  (ctable status "installed" recipe
          (:name ctable :description "Table Component for elisp" :type github :pkgname "kiwanami/emacs-ctable"))
  (deferred status "installed" recipe
-   (:name deferred :description "Simple asynchronous functions for emacs lisp" :website "https://github.com/kiwanami/emacs-deferred" :type github :pkgname "kiwanami/emacs-deferred" :features "deferred"))
+   (:name deferred :description "Simple asynchronous functions for emacs lisp." :type github :pkgname "kiwanami/emacs-deferred"))
  (dot-mode status "installed" recipe
            (:name dot-mode :auto-generated t :type emacswiki :description "Minor mode to repeat typing or commands" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/dot-mode.el"))
  (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "4.stable" :pkgname "dimitri/el-get" :info "." :load "el-get.el"))
+ (ensime status "installed" recipe
+         (:name ensime :description "ENhanced Scala Interaction Mode for Emacs" :type github :pkgname "aemoncannon/ensime" :build
+                '(("sbt" "update" "stage"))
+                :load-path
+                ("./dist/elisp")
+                :post-init
+                (progn
+                  (autoload 'ensime-scala-mode-hook "ensime")
+                  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))))
  (epc status "installed" recipe
       (:name epc :description "An RPC stack for Emacs Lisp" :type github :pkgname "kiwanami/emacs-epc" :depends
              (deferred ctable)))
@@ -25,7 +39,9 @@
       (:name ess :description "Emacs Speaks Statistics: statistical programming within Emacs" :type github :pkgname "emacs-ess/ESS" :website "http://ess.r-project.org/" :info "doc/info/" :build
              `(("make" "clean" "all" ,(concat "EMACS="
                                               (shell-quote-argument el-get-emacs))))
-             :load "ess-autoloads.el"))
+             :load "ess-autoloads.el" :prepare
+             (progn
+               (autoload 'R-mode "ess-site" nil t))))
  (ethan-wspace status "installed" recipe
                (:name ethan-wspace :description "Whitespace customizations for emacs" :type github :pkgname "glasserc/ethan-wspace" :load-path "lisp/" :features ethan-wspace))
  (full-ack status "removed" recipe nil)
@@ -82,6 +98,9 @@
                           (expand-file-name "pylookup.db"))
                     (autoload 'pylookup-lookup "pylookup" "Lookup SEARCH-TERM in the Python HTML indexes." t)
                     (autoload 'pylookup-update "pylookup" "Run pylookup-update and create the database at `pylookup-db-file'." t))))
+ (python-environment status "installed" recipe
+                     (:name python-environment :description "Python virtualenv API for Emacs Lisp" :type github :pkgname "tkf/emacs-python-environment" :depends
+                            (deferred)))
  (python-mode status "installed" recipe
               (:name python-mode :description "Major mode for editing Python programs" :type bzr :url "lp:python-mode" :load-path
                      ("." "test")
