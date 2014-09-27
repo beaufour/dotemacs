@@ -17,6 +17,8 @@
                        (setq color-theme-is-global t))))
  (ctable status "installed" recipe
          (:name ctable :description "Table Component for elisp" :type github :pkgname "kiwanami/emacs-ctable"))
+ (dash status "installed" recipe
+       (:name dash :description "A modern list api for Emacs. No 'cl required." :type github :pkgname "magnars/dash.el"))
  (deferred status "installed" recipe
    (:name deferred :description "Simple asynchronous functions for emacs lisp." :type github :pkgname "kiwanami/emacs-deferred"))
  (dot-mode status "installed" recipe
@@ -24,11 +26,9 @@
  (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "4.stable" :pkgname "dimitri/el-get" :info "." :load "el-get.el"))
  (ensime status "installed" recipe
-         (:name ensime :description "ENhanced Scala Interaction Mode for Emacs" :type github :pkgname "aemoncannon/ensime" :build
-                '(("sbt" "update" "stage"))
-                :load-path
-                ("./dist/elisp")
-                :post-init
+         (:name ensime :description "ENhanced Scala Interaction Mode for Emacs" :type github :pkgname "ensime/ensime-emacs" :depends
+                (s dash popup auto-complete scala-mode2)
+                :prepare
                 (progn
                   (autoload 'ensime-scala-mode-hook "ensime")
                   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))))
@@ -41,7 +41,9 @@
                                               (shell-quote-argument el-get-emacs))))
              :load "ess-autoloads.el" :prepare
              (progn
-               (autoload 'R-mode "ess-site" nil t))))
+               (autoload 'R-mode "ess-site" nil t)
+               (autoload 'Rd-mode "ess-site" nil t)
+               (autoload 'Rnw-mode "ess-site" nil t))))
  (ethan-wspace status "installed" recipe
                (:name ethan-wspace :description "Whitespace customizations for emacs" :type github :pkgname "glasserc/ethan-wspace" :load-path "lisp/" :features ethan-wspace))
  (full-ack status "removed" recipe nil)
@@ -49,17 +51,13 @@
         (:name fuzzy :website "https://github.com/auto-complete/fuzzy-el" :description "Fuzzy matching utilities for GNU Emacs" :type github :pkgname "auto-complete/fuzzy-el"))
  (git-emacs status "installed" recipe
             (:name git-emacs :description "Yet another git emacs mode for newbies" :type github :pkgname "tsgates/git-emacs" :features git-emacs))
+ (git-timemachine status "installed" recipe
+                  (:name git-timemachine :description "Step through historic versions of git controlled file using everyone's favourite editor" :type github :minimum-emacs-version "24" :pkgname "pidu/git-timemachine"))
  (go-mode status "installed" recipe
           (:name go-mode :description "Major mode for the Go programming language" :type http :url "http://go.googlecode.com/hg/misc/emacs/go-mode.el?r=tip" :localname "go-mode.el"))
  (jedi status "installed" recipe
-       (:name jedi :description "An awesome Python auto-completion for Emacs" :type github :pkgname "tkf/emacs-jedi" :build
-              (("make" "requirements"))
-              :build/windows-nt
-              (("make" "requirements" "PYTHON=python.exe" "BINDIR=Scripts"))
-              :build/berkeley-unix
-              (("gmake" "requirements"))
-              :submodule nil :depends
-              (epc auto-complete)))
+       (:name jedi :description "An awesome Python auto-completion for Emacs" :type github :pkgname "tkf/emacs-jedi" :submodule nil :depends
+              (epc auto-complete python-environment)))
  (js2-mode status "installed" recipe
            (:name js2-mode :website "https://github.com/mooz/js2-mode#readme" :description "An improved JavaScript editing mode" :type github :pkgname "mooz/js2-mode" :prepare
                   (autoload 'js2-mode "js2-mode" nil t)))
@@ -70,7 +68,7 @@
                        (autoload 'Lorem-ipsum-insert-sentences "lorem-ipsum")
                        (autoload 'Lorem-ipsum-insert-list "lorem-ipsum"))))
  (markdown-mode status "installed" recipe
-                (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type git :url "git://jblevins.org/git/markdown-mode.git" :before
+                (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type git :url "git://jblevins.org/git/markdown-mode.git" :prepare
                        (add-to-list 'auto-mode-alist
                                     '("\\.\\(md\\|mdown\\|markdown\\)\\'" . markdown-mode))))
  (nagios-mode status "installed" recipe
@@ -120,8 +118,10 @@
                       (autoload 'rhtml-mode "rhtml-mode" nil t)
                       (add-to-list 'auto-mode-alist
                                    '("\\.html.erb$" . rhtml-mode)))))
+ (s status "installed" recipe
+    (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el"))
  (scala-mode2 status "installed" recipe
-              (:name scala-mode2 :website "https://github.com/hvesalai/scala-mode2" :description "A new scala-mode for Emacs 24" :type github :pkgname "hvesalai/scala-mode2" :load-path "." :features scala-mode2))
+              (:name scala-mode2 :description "A new scala-mode for Emacs 24." :type github :pkgname "hvesalai/scala-mode2"))
  (yaml-mode status "installed" recipe
             (:name yaml-mode :description "Simple major mode to edit YAML file for emacs" :type github :pkgname "yoshiki/yaml-mode"))
  (yasnippet status "installed" recipe

@@ -236,6 +236,23 @@ Display a list of packages.
 
 ;;;***
 
+;;;### (autoloads (ensime-remote ensime) "ensime/ensime" "ensime/ensime.el"
+;;;;;;  (21542 61646 0 0))
+;;; Generated autoloads from ensime/ensime.el
+
+(autoload 'ensime "ensime/ensime" "\
+Read config file for settings. Then start an inferior
+   ENSIME server and connect to its Swank server.
+
+\(fn)" t nil)
+
+(autoload 'ensime-remote "ensime/ensime" "\
+Read config file for settings. Then connect to an existing ENSIME server.
+
+\(fn HOST PORT)" t nil)
+
+;;;***
+
 ;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "ethan-wspace/lisp/ethan-wspace"
 ;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (21193 50724 0 0))
 ;;; Generated autoloads from ethan-wspace/lisp/ethan-wspace.el
@@ -283,6 +300,17 @@ With prefix ARG, turn the mode on if ARG is positive.
 
 (autoload 'git-reblame "git-emacs/git-blame" "\
 Recalculate all blame information in the current buffer
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads (git-timemachine) "git-timemachine/git-timemachine"
+;;;;;;  "git-timemachine/git-timemachine.el" (21542 61878 0 0))
+;;; Generated autoloads from git-timemachine/git-timemachine.el
+
+(autoload 'git-timemachine "git-timemachine/git-timemachine" "\
+Enable git timemachine for file of current buffer.
 
 \(fn)" t nil)
 
@@ -369,6 +397,119 @@ Downloads a paste from the playground and inserts it in a Go
 buffer. Tries to look for a URL at point.
 
 \(fn URL)" t nil)
+
+;;;***
+
+;;;### (autoloads (jedi:install-server-block jedi:install-server
+;;;;;;  jedi:setup anything-jedi-related-names helm-jedi-related-names
+;;;;;;  jedi:ac-setup jedi:complete jedi:start-dedicated-server)
+;;;;;;  "jedi/jedi" "jedi/jedi.el" (21542 61734 0 0))
+;;; Generated autoloads from jedi/jedi.el
+
+(autoload 'jedi:start-dedicated-server "jedi/jedi" "\
+Start Jedi server dedicated to this buffer.
+This is useful, for example, when you want to use different
+`sys.path' for some buffer.  When invoked as an interactive
+command, it asks you how to start the Jedi server.  You can edit
+the command in minibuffer to specify the way Jedi server run.
+
+If you want to setup how Jedi server is started programmatically
+per-buffer/per-project basis, make `jedi:server-command' and
+`jedi:server-args' buffer local and set it in `python-mode-hook'.
+See also: `jedi:server-args'.
+
+\(fn COMMAND)" t nil)
+
+(autoload 'jedi:complete "jedi/jedi" "\
+Complete code at point.
+
+\(fn &key (expand ac-expand-on-auto-complete))" t nil)
+
+(autoload 'jedi:ac-setup "jedi/jedi" "\
+Add Jedi AC sources to `ac-sources'.
+
+If auto-completion is all you need, you can call this function instead
+of `jedi:setup', like this::
+
+   (add-hook 'python-mode-hook 'jedi:ac-setup)
+
+Note that this function calls `auto-complete-mode' if it is not
+already enabled, for people who don't call `global-auto-complete-mode'
+in their Emacs configuration.
+
+\(fn)" t nil)
+
+(autoload 'helm-jedi-related-names "jedi/jedi" "\
+Find related names of the object at point using `helm' interface.
+
+\(fn)" t nil)
+
+(autoload 'anything-jedi-related-names "jedi/jedi" "\
+Find related names of the object at point using `anything' interface.
+
+\(fn)" t nil)
+
+(autoload 'jedi:setup "jedi/jedi" "\
+Fully setup jedi.el for current buffer.
+It setups `ac-sources' (calls `jedi:ac-setup') and turns
+`jedi-mode' on.
+
+This function is intended to be called from `python-mode-hook',
+like this::
+
+       (add-hook 'python-mode-hook 'jedi:setup)
+
+You can also call this function as a command, to quickly test
+what jedi can do.
+
+\(fn)" t nil)
+
+(autoload 'jedi:install-server "jedi/jedi" "\
+This command installs Jedi server script jediepcserver.py in a
+Python environment dedicated to Emacs.  By default, the
+environment is at ``~/.emacs.d/.python-environments/default/``.
+This environment is automatically created by ``virtualenv`` if it
+does not exist.
+
+Run this command (i.e., type ``M-x jedi:install-server RET``)
+whenever Jedi.el shows a message to do so.  It is a good idea to
+run this every time after you update Jedi.el to sync version of
+Python modules used by Jedi.el and Jedi.el itself.
+
+You can modify the location of the environment by changing
+`jedi:environment-root' and/or `python-environment-directory'.  More
+specifically, Jedi.el will install Python modules under the directory
+``PYTHON-ENVIRONMENT-DIRECTORY/JEDI:ENVIRONMENT-ROOT``.  Note that you
+need command line program ``virtualenv``.  If you have the command in
+an unusual location, use `python-environment-virtualenv' to specify the
+location.
+
+.. NOTE:: jediepcserver.py is installed in a virtual environment but it
+   does not mean Jedi.el cannot recognize the modules in virtual
+   environment you are using for your Python development.  Jedi
+   EPC server recognize the virtualenv it is in (i.e., the
+   environment variable ``VIRTUAL_ENV`` in your Emacs) and then
+   add modules in that environment to its ``sys.path``.  You can
+   also add ``--virtual-env PATH/TO/ENV`` to `jedi:server-args'
+   to include modules of virtual environment even you launch
+   Emacs outside of the virtual environment.
+
+.. NOTE:: It is highly recommended to use this command to install
+   Python modules for Jedi.el.  You still can install Python
+   modules used by Jedi.el manually.  However, you are then
+   responsible for keeping Jedi.el and Python modules compatible.
+
+See also:
+
+- https://github.com/tkf/emacs-jedi/pull/72
+- https://github.com/tkf/emacs-jedi/issues/140#issuecomment-37358527
+
+\(fn)" t nil)
+
+(autoload 'jedi:install-server-block "jedi/jedi" "\
+Blocking version `jedi:install-server'.
+
+\(fn)" nil nil)
 
 ;;;***
 
@@ -615,6 +756,30 @@ Embedded Ruby Mode (RHTML)
 
 ;;;***
 
+;;;### (autoloads (scala-mode scala-mode:set-scala-syntax-mode) "scala-mode2/scala-mode2"
+;;;;;;  "scala-mode2/scala-mode2.el" (21542 61629 0 0))
+;;; Generated autoloads from scala-mode2/scala-mode2.el
+
+(autoload 'scala-mode:set-scala-syntax-mode "scala-mode2/scala-mode2" "\
+Sets the syntax-table and other realted variables for the current buffer to those of scala-mode. Can be used to make some other major mode (such as sbt-mode) use scala syntax-table.
+
+\(fn)" nil nil)
+
+(autoload 'scala-mode "scala-mode2/scala-mode2" "\
+Major mode for editing scala code.
+
+When started, runs `scala-mode-hook'. 
+
+\\{scala-mode-map}
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.\\(scala\\|sbt\\)\\'" . scala-mode))
+
+(modify-coding-system-alist 'file "\\.\\(scala\\|sbt\\)\\'" 'utf-8)
+
+;;;***
+
 ;;;### (autoloads (yaml-mode yaml) "yaml-mode/yaml-mode" "yaml-mode/yaml-mode.el"
 ;;;;;;  (21193 52182 0 0))
 ;;; Generated autoloads from yaml-mode/yaml-mode.el
@@ -677,27 +842,45 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 ;;;### (autoloads nil nil ("auto-complete/auto-complete-config.el"
 ;;;;;;  "auto-complete/auto-complete-pkg.el" "color-theme/color-theme-autoloads.el"
-;;;;;;  "ctable/ctable.el" "ctable/test-ctable.el" "deferred/concurrent-sample.el"
-;;;;;;  "deferred/concurrent.el" "deferred/deferred-samples.el" "deferred/deferred.el"
-;;;;;;  "deferred/test-concurrent.el" "deferred/test-deferred.el"
-;;;;;;  "dot-mode/dot-mode.el" "el-get/el-get-autoloads.el" "el-get/el-get-build.el"
-;;;;;;  "el-get/el-get-byte-compile.el" "el-get/el-get-core.el" "el-get/el-get-custom.el"
-;;;;;;  "el-get/el-get-dependencies.el" "el-get/el-get-install.el"
-;;;;;;  "el-get/el-get-methods.el" "el-get/el-get-notify.el" "el-get/el-get-recipes.el"
-;;;;;;  "el-get/el-get-status.el" "epc/epc.el" "epc/epcs.el" "epc/test-epc.el"
-;;;;;;  "fuzzy/fuzzy.el" "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
+;;;;;;  "ctable/ctable.el" "ctable/test-ctable.el" "dash/dash-functional.el"
+;;;;;;  "dash/dash.el" "deferred/concurrent-sample.el" "deferred/concurrent.el"
+;;;;;;  "deferred/deferred-samples.el" "deferred/deferred.el" "deferred/test-concurrent.el"
+;;;;;;  "deferred/test-deferred.el" "dot-mode/dot-mode.el" "el-get/el-get-autoloads.el"
+;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
+;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
+;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "ensime/ensime-auto-complete.el"
+;;;;;;  "ensime/ensime-builder.el" "ensime/ensime-client.el" "ensime/ensime-comint-utils.el"
+;;;;;;  "ensime/ensime-config.el" "ensime/ensime-debug.el" "ensime/ensime-doc.el"
+;;;;;;  "ensime/ensime-editor.el" "ensime/ensime-goto-testfile.el"
+;;;;;;  "ensime/ensime-inf.el" "ensime/ensime-inspector.el" "ensime/ensime-macros.el"
+;;;;;;  "ensime/ensime-mode.el" "ensime/ensime-model.el" "ensime/ensime-notes.el"
+;;;;;;  "ensime/ensime-pkg.el" "ensime/ensime-popup.el" "ensime/ensime-refactor.el"
+;;;;;;  "ensime/ensime-sbt.el" "ensime/ensime-scalex.el" "ensime/ensime-search.el"
+;;;;;;  "ensime/ensime-semantic-highlight.el" "ensime/ensime-stacktrace.el"
+;;;;;;  "ensime/ensime-test.el" "ensime/ensime-ui.el" "ensime/ensime-undo.el"
+;;;;;;  "ensime/ensime-util.el" "ensime/ensime-vars.el" "epc/epc.el"
+;;;;;;  "epc/epcs.el" "epc/test-epc.el" "ess/ess-autoloads.el" "fuzzy/fuzzy.el"
+;;;;;;  "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
 ;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
-;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "lorem-ipsum/lorem-ipsum.el"
+;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "jedi/jedi-pkg.el"
+;;;;;;  "jedi/test-jedi.el" "jedi/tryout-jedi.el" "lorem-ipsum/lorem-ipsum.el"
 ;;;;;;  "nagios-mode/nagios-mode.el" "php-mode/php-mode-test.el"
-;;;;;;  "popup/popup.el" "python-mode/python-mode.el" "python-mode/test/pars-part-output.el"
-;;;;;;  "python-mode/test/py-bug-numbered-tests.el" "python-mode/test/py-completion-tests.el"
-;;;;;;  "python-mode/test/py-shell-completion-tests.el" "python-mode/test/python-executes-test.el"
-;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-ert-tests.el"
-;;;;;;  "python-mode/test/python-mode-syntax-test.el" "python-mode/test/python-mode-test.el"
-;;;;;;  "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
+;;;;;;  "popup/popup.el" "python-environment/python-environment.el"
+;;;;;;  "python-environment/test-python-environment.el" "python-mode/python-mode.el"
+;;;;;;  "python-mode/test/pars-part-output.el" "python-mode/test/py-bug-numbered-tests.el"
+;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-shell-completion-tests.el"
+;;;;;;  "python-mode/test/python-executes-test.el" "python-mode/test/python-extended-executes-test.el"
+;;;;;;  "python-mode/test/python-mode-ert-tests.el" "python-mode/test/python-mode-syntax-test.el"
+;;;;;;  "python-mode/test/python-mode-test.el" "rhtml-mode/rhtml-erb.el"
+;;;;;;  "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
 ;;;;;;  "rhtml-mode/rhtml-ruby-hook.el" "rhtml-mode/rhtml-sgml-hacks.el"
+;;;;;;  "s/s.el" "scala-mode2/scala-mode2-fontlock.el" "scala-mode2/scala-mode2-indent.el"
+;;;;;;  "scala-mode2/scala-mode2-lib.el" "scala-mode2/scala-mode2-map.el"
+;;;;;;  "scala-mode2/scala-mode2-paragraph.el" "scala-mode2/scala-mode2-pkg.el"
+;;;;;;  "scala-mode2/scala-mode2-sbt.el" "scala-mode2/scala-mode2-syntax.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (21542 61561 868659 0))
+;;;;;;  (21542 61878 657181 0))
 
 ;;;***
 
