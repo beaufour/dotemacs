@@ -181,8 +181,10 @@ Initialize the color theme package by loading color-theme-libraries.
 
 ;;;***
 
-;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (21336 2721
-;;;;;;  0 0))
+;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
+;;;;;;  el-get-self-update el-get-update-packages-of-type el-get-update-all
+;;;;;;  el-get-version) "el-get/el-get" "el-get/el-get.el" (21542
+;;;;;;  61403 0 0))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -223,8 +225,8 @@ Compute the checksum of the given package, and put it in the kill-ring
 
 ;;;***
 
-;;;### (autoloads nil "el-get/el-get-list-packages" "el-get/el-get-list-packages.el"
-;;;;;;  (21336 2721 0 0))
+;;;### (autoloads (el-get-list-packages) "el-get/el-get-list-packages"
+;;;;;;  "el-get/el-get-list-packages.el" (21542 61403 0 0))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -234,98 +236,8 @@ Display a list of packages.
 
 ;;;***
 
-;;;### (autoloads (gretl gretl-mode) "ess/lisp/ess-gretl" "ess/lisp/ess-gretl.el"
-;;;;;;  (21243 42712 0 0))
-;;; Generated autoloads from ess/lisp/ess-gretl.el
-
-(autoload 'gretl-mode "ess/lisp/ess-gretl" "\
-Major mode for editing gretl source.  See `ess-mode' for more help.
-
-\(fn &optional PROC-NAME)" t nil)
-
-(autoload 'gretl "ess/lisp/ess-gretl" "\
-Call 'gretl',
-Optional prefix (C-u) allows to set command line arguments, such as
---vsize.  This should be OS agnostic.
-If you have certain command line arguments that should always be passed
-to gretl, put them in the variable `inferior-gretl-args'.
-
-\(fn &optional START-ARGS)" t nil)
-
-;;;***
-
-;;;### (autoloads (julia julia-mode) "ess/lisp/ess-julia" "ess/lisp/ess-julia.el"
-;;;;;;  (21243 42712 0 0))
-;;; Generated autoloads from ess/lisp/ess-julia.el
-
-(autoload 'julia-mode "ess/lisp/ess-julia" "\
-Major mode for editing julia source.  See `ess-mode' for more help.
-
-\(fn &optional PROC-NAME)" t nil)
-
-(autoload 'julia "ess/lisp/ess-julia" "\
-Call 'julia'.
-Optional prefix (C-u) allows to set command line arguments, such as
---load=<file>.  This should be OS agnostic.
-If you have certain command line arguments that should always be passed
-to julia, put them in the variable `inferior-julia-args'.
-
-\(fn &optional START-ARGS)" t nil)
-
-;;;***
-
-;;;### (autoloads (Rd-mode) "ess/lisp/ess-rd" "ess/lisp/ess-rd.el"
-;;;;;;  (21243 42712 0 0))
-;;; Generated autoloads from ess/lisp/ess-rd.el
-
-(autoload 'Rd-mode "ess/lisp/ess-rd" "\
-Major mode for editing R documentation source files.
-
-This mode makes it easier to write R documentation by helping with
-indentation, doing some of the typing for you (with Abbrev mode) and by
-showing keywords, strings, etc. in different faces (with Font Lock mode
-on terminals that support it).
-
-Type \\[list-abbrevs] to display the built-in abbrevs for Rd keywords.
-
-Keybindings
-===========
-
-\\{Rd-mode-map}
-
-Variables you can use to customize Rd mode
-==========================================
-
-`Rd-indent-level'
-  Indentation of Rd code with respect to containing blocks.
-  Default is 2.
-
-Turning on Rd mode runs the hook `Rd-mode-hook'.
-
-To automatically turn on the abbrev(iate) features, add the
-following lines to your `.emacs' file:
-
-  (add-hook 'Rd-mode-hook
-            (lambda ()
-              (abbrev-mode 1)))
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (mouse-me) "ess/lisp/mouseme" "ess/lisp/mouseme.el"
-;;;;;;  (21243 42712 0 0))
-;;; Generated autoloads from ess/lisp/mouseme.el
-
-(autoload 'mouse-me "ess/lisp/mouseme" "\
-Popup a menu of functions to run on selected string or region.
-
-\(fn EVENT)" t nil)
-
-;;;***
-
 ;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "ethan-wspace/lisp/ethan-wspace"
-;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (21089 17786 0 0))
+;;;;;;  "ethan-wspace/lisp/ethan-wspace.el" (21193 50724 0 0))
 ;;; Generated autoloads from ethan-wspace/lisp/ethan-wspace.el
 
 (autoload 'ethan-wspace-mode "ethan-wspace/lisp/ethan-wspace" "\
@@ -359,7 +271,7 @@ See `ethan-wspace-mode' for more information on Ethan-Wspace mode.
 ;;;***
 
 ;;;### (autoloads (git-reblame git-blame-mode) "git-emacs/git-blame"
-;;;;;;  "git-emacs/git-blame.el" (21089 17789 0 0))
+;;;;;;  "git-emacs/git-blame.el" (21193 50749 0 0))
 ;;; Generated autoloads from git-emacs/git-blame.el
 
 (autoload 'git-blame-mode "git-emacs/git-blame" "\
@@ -457,71 +369,6 @@ Downloads a paste from the playground and inserts it in a Go
 buffer. Tries to look for a URL at point.
 
 \(fn URL)" t nil)
-
-;;;***
-
-;;;### (autoloads (jedi:setup anything-jedi-related-names helm-jedi-related-names
-;;;;;;  jedi:ac-setup jedi:complete jedi:start-dedicated-server)
-;;;;;;  "jedi/jedi" "jedi/jedi.el" (21271 13724 0 0))
-;;; Generated autoloads from jedi/jedi.el
-
-(autoload 'jedi:start-dedicated-server "jedi/jedi" "\
-Start Jedi server dedicated to this buffer.
-This is useful, for example, when you want to use different
-`sys.path' for some buffer.  When invoked as an interactive
-command, it asks you how to start the Jedi server.  You can edit
-the command in minibuffer to specify the way Jedi server run.
-
-If you want to setup how Jedi server is started programmatically
-per-buffer/per-project basis, make `jedi:server-command' and
-`jedi:server-args' buffer local and set it in `python-mode-hook'.
-See also: `jedi:server-args'.
-
-\(fn COMMAND)" t nil)
-
-(autoload 'jedi:complete "jedi/jedi" "\
-Complete code at point.
-
-\(fn &key (expand ac-expand-on-auto-complete))" t nil)
-
-(autoload 'jedi:ac-setup "jedi/jedi" "\
-Add Jedi AC sources to `ac-sources'.
-
-If auto-completion is all you need, you can call this function instead
-of `jedi:setup', like this::
-
-   (add-hook 'python-mode-hook 'jedi:ac-setup)
-
-Note that this function calls `auto-complete-mode' if it is not
-already enabled, for people who don't call `global-auto-complete-mode'
-in their Emacs configuration.
-
-\(fn)" t nil)
-
-(autoload 'helm-jedi-related-names "jedi/jedi" "\
-Find related names of the object at point using `helm' interface.
-
-\(fn)" t nil)
-
-(autoload 'anything-jedi-related-names "jedi/jedi" "\
-Find related names of the object at point using `anything' interface.
-
-\(fn)" t nil)
-
-(autoload 'jedi:setup "jedi/jedi" "\
-Fully setup jedi.el for current buffer.
-It setups `ac-sources' (calls `jedi:ac-setup') and turns
-`jedi-mode' on.
-
-This function is intended to be called from `python-mode-hook',
-like this::
-
-       (add-hook 'python-mode-hook 'jedi:setup)
-
-You can also call this function as a command, to quickly test
-what jedi can do.
-
-\(fn)" t nil)
 
 ;;;***
 
@@ -651,7 +498,7 @@ Key bindings:
 
 ;;;### (autoloads (pylookup-lookup-at-point pylookup-update-all pylookup-update
 ;;;;;;  pylookup-set-search-option pylookup-lookup) "pylookup/pylookup"
-;;;;;;  "pylookup/pylookup.el" (21089 17823 0 0))
+;;;;;;  "pylookup/pylookup.el" (21193 51835 0 0))
 ;;; Generated autoloads from pylookup/pylookup.el
 
 (autoload 'pylookup-lookup "pylookup/pylookup" "\
@@ -682,7 +529,7 @@ Query the for string with help of word read at point and call `pylookup-lookup'
 ;;;***
 
 ;;;### (autoloads (doctest-mode doctest-register-mmm-classes) "python-mode/test/doctest-mode"
-;;;;;;  "python-mode/test/doctest-mode.el" (21089 18093 0 0))
+;;;;;;  "python-mode/test/doctest-mode.el" (21193 51864 0 0))
 ;;; Generated autoloads from python-mode/test/doctest-mode.el
 
 (autoload 'doctest-register-mmm-classes "python-mode/test/doctest-mode" "\
@@ -756,7 +603,7 @@ treated differently:
 ;;;***
 
 ;;;### (autoloads (rhtml-mode) "rhtml-mode/rhtml-mode" "rhtml-mode/rhtml-mode.el"
-;;;;;;  (21089 18094 0 0))
+;;;;;;  (21193 51867 0 0))
 ;;; Generated autoloads from rhtml-mode/rhtml-mode.el
 
 (autoload 'rhtml-mode "rhtml-mode/rhtml-mode" "\
@@ -768,32 +615,8 @@ Embedded Ruby Mode (RHTML)
 
 ;;;***
 
-;;;### (autoloads (scala-mode scala-mode:set-scala-syntax-mode) "scala-mode2/scala-mode2"
-;;;;;;  "scala-mode2/scala-mode2.el" (21335 62433 0 0))
-;;; Generated autoloads from scala-mode2/scala-mode2.el
-
-(autoload 'scala-mode:set-scala-syntax-mode "scala-mode2/scala-mode2" "\
-Sets the syntax-table and other realted variables for the current buffer to those of scala-mode. Can be used to make some other major mode (such as sbt-mode) use scala syntax-table.
-
-\(fn)" nil nil)
-
-(autoload 'scala-mode "scala-mode2/scala-mode2" "\
-Major mode for editing scala code.
-
-When started, runs `scala-mode-hook'.
-
-\\{scala-mode-map}
-
-\(fn)" t nil)
-
-(add-to-list 'auto-mode-alist '("\\.\\(scala\\|sbt\\)\\'" . scala-mode))
-
-(modify-coding-system-alist 'file "\\.\\(scala\\|sbt\\)\\'" 'utf-8)
-
-;;;***
-
 ;;;### (autoloads (yaml-mode yaml) "yaml-mode/yaml-mode" "yaml-mode/yaml-mode.el"
-;;;;;;  (21089 18115 0 0))
+;;;;;;  (21193 52182 0 0))
 ;;; Generated autoloads from yaml-mode/yaml-mode.el
 
 (let ((loads (get 'yaml 'custom-loads))) (if (member '"yaml-mode/yaml-mode" loads) nil (put 'yaml 'custom-loads (cons '"yaml-mode/yaml-mode" loads))))
@@ -857,56 +680,24 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "ctable/ctable.el" "ctable/test-ctable.el" "deferred/concurrent-sample.el"
 ;;;;;;  "deferred/concurrent.el" "deferred/deferred-samples.el" "deferred/deferred.el"
 ;;;;;;  "deferred/test-concurrent.el" "deferred/test-deferred.el"
-;;;;;;  "dot-mode/dot-mode.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "ensime/dist/elisp/auto-complete.el" "ensime/dist/elisp/ensime-auto-complete.el"
-;;;;;;  "ensime/dist/elisp/ensime-builder.el" "ensime/dist/elisp/ensime-comint-utils.el"
-;;;;;;  "ensime/dist/elisp/ensime-config.el" "ensime/dist/elisp/ensime-debug.el"
-;;;;;;  "ensime/dist/elisp/ensime-doc.el" "ensime/dist/elisp/ensime-inf.el"
-;;;;;;  "ensime/dist/elisp/ensime-refactor.el" "ensime/dist/elisp/ensime-sbt.el"
-;;;;;;  "ensime/dist/elisp/ensime-scalex.el" "ensime/dist/elisp/ensime-search.el"
-;;;;;;  "ensime/dist/elisp/ensime-semantic-highlight.el" "ensime/dist/elisp/ensime-test.el"
-;;;;;;  "ensime/dist/elisp/ensime-ui.el" "ensime/dist/elisp/ensime-undo.el"
-;;;;;;  "ensime/dist/elisp/ensime.el" "ensime/dist/elisp/fuzzy.el"
-;;;;;;  "ensime/dist/elisp/popup.el" "epc/epc.el" "epc/epcs.el" "epc/test-epc.el"
-;;;;;;  "ess/ess-autoloads.el" "ess/lisp/ess-arc-d.el" "ess/lisp/ess-bugs-d.el"
-;;;;;;  "ess/lisp/ess-bugs-l.el" "ess/lisp/ess-comp.el" "ess/lisp/ess-compat.el"
-;;;;;;  "ess/lisp/ess-custom.el" "ess/lisp/ess-dde.el" "ess/lisp/ess-debug.el"
-;;;;;;  "ess/lisp/ess-developer.el" "ess/lisp/ess-eldoc.el" "ess/lisp/ess-font-lock.el"
-;;;;;;  "ess/lisp/ess-help.el" "ess/lisp/ess-inf.el" "ess/lisp/ess-install.el"
-;;;;;;  "ess/lisp/ess-jags-d.el" "ess/lisp/ess-lsp-l.el" "ess/lisp/ess-menu.el"
-;;;;;;  "ess/lisp/ess-mode.el" "ess/lisp/ess-mouse.el" "ess/lisp/ess-noweb-font-lock-mode.el"
-;;;;;;  "ess/lisp/ess-noweb-mode.el" "ess/lisp/ess-noweb.el" "ess/lisp/ess-omg-d.el"
-;;;;;;  "ess/lisp/ess-omg-l.el" "ess/lisp/ess-r-a.el" "ess/lisp/ess-r-args.el"
-;;;;;;  "ess/lisp/ess-r-d.el" "ess/lisp/ess-r-gui.el" "ess/lisp/ess-rdired.el"
-;;;;;;  "ess/lisp/ess-rutils.el" "ess/lisp/ess-s-l.el" "ess/lisp/ess-s3-d.el"
-;;;;;;  "ess/lisp/ess-s4-d.el" "ess/lisp/ess-sas-a.el" "ess/lisp/ess-sas-d.el"
-;;;;;;  "ess/lisp/ess-sas-l.el" "ess/lisp/ess-send.el" "ess/lisp/ess-send2.el"
-;;;;;;  "ess/lisp/ess-site.el" "ess/lisp/ess-sp3-d.el" "ess/lisp/ess-sp4-d.el"
-;;;;;;  "ess/lisp/ess-sp5-d.el" "ess/lisp/ess-sp6-d.el" "ess/lisp/ess-sp6w-d.el"
-;;;;;;  "ess/lisp/ess-sta-d.el" "ess/lisp/ess-sta-l.el" "ess/lisp/ess-swv.el"
-;;;;;;  "ess/lisp/ess-toolbar.el" "ess/lisp/ess-tracebug.el" "ess/lisp/ess-trns.el"
-;;;;;;  "ess/lisp/ess-utils.el" "ess/lisp/ess-vst-d.el" "ess/lisp/ess-xls-d.el"
-;;;;;;  "ess/lisp/ess.el" "ess/lisp/essd-els.el" "ess/lisp/make-regexp.el"
-;;;;;;  "ess/lisp/msdos.el" "fuzzy/fuzzy.el" "git-emacs/git--test.el"
-;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
-;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
-;;;;;;  "git-emacs/git-status.el" "jedi/jedi-pkg.el" "jedi/test-jedi.el"
-;;;;;;  "jedi/tryout-jedi.el" "lorem-ipsum/lorem-ipsum.el" "nagios-mode/nagios-mode.el"
-;;;;;;  "php-mode/php-mode-test.el" "popup/popup.el" "python-environment/python-environment.el"
-;;;;;;  "python-environment/test-python-environment.el" "python-mode/python-mode.el"
-;;;;;;  "python-mode/test/pars-part-output.el" "python-mode/test/py-bug-numbered-tests.el"
-;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-shell-completion-tests.el"
-;;;;;;  "python-mode/test/python-executes-test.el" "python-mode/test/python-extended-executes-test.el"
-;;;;;;  "python-mode/test/python-mode-ert-tests.el" "python-mode/test/python-mode-syntax-test.el"
-;;;;;;  "python-mode/test/python-mode-test.el" "rhtml-mode/rhtml-erb.el"
-;;;;;;  "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
+;;;;;;  "dot-mode/dot-mode.el" "el-get/el-get-autoloads.el" "el-get/el-get-build.el"
+;;;;;;  "el-get/el-get-byte-compile.el" "el-get/el-get-core.el" "el-get/el-get-custom.el"
+;;;;;;  "el-get/el-get-dependencies.el" "el-get/el-get-install.el"
+;;;;;;  "el-get/el-get-methods.el" "el-get/el-get-notify.el" "el-get/el-get-recipes.el"
+;;;;;;  "el-get/el-get-status.el" "epc/epc.el" "epc/epcs.el" "epc/test-epc.el"
+;;;;;;  "fuzzy/fuzzy.el" "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
+;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
+;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "lorem-ipsum/lorem-ipsum.el"
+;;;;;;  "nagios-mode/nagios-mode.el" "php-mode/php-mode-test.el"
+;;;;;;  "popup/popup.el" "python-mode/python-mode.el" "python-mode/test/pars-part-output.el"
+;;;;;;  "python-mode/test/py-bug-numbered-tests.el" "python-mode/test/py-completion-tests.el"
+;;;;;;  "python-mode/test/py-shell-completion-tests.el" "python-mode/test/python-executes-test.el"
+;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-ert-tests.el"
+;;;;;;  "python-mode/test/python-mode-syntax-test.el" "python-mode/test/python-mode-test.el"
+;;;;;;  "rhtml-mode/rhtml-erb.el" "rhtml-mode/rhtml-fonts.el" "rhtml-mode/rhtml-navigation.el"
 ;;;;;;  "rhtml-mode/rhtml-ruby-hook.el" "rhtml-mode/rhtml-sgml-hacks.el"
-;;;;;;  "scala-mode2/scala-mode2-fontlock.el" "scala-mode2/scala-mode2-indent.el"
-;;;;;;  "scala-mode2/scala-mode2-lib.el" "scala-mode2/scala-mode2-map.el"
-;;;;;;  "scala-mode2/scala-mode2-paragraph.el" "scala-mode2/scala-mode2-pkg.el"
-;;;;;;  "scala-mode2/scala-mode2-sbt.el" "scala-mode2/scala-mode2-syntax.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (21336 7669 345690 0))
+;;;;;;  (21542 61561 868659 0))
 
 ;;;***
 
