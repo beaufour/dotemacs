@@ -181,10 +181,8 @@ Initialize the color theme package by loading color-theme-libraries.
 
 ;;;***
 
-;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
-;;;;;;  el-get-self-update el-get-update-packages-of-type el-get-update-all
-;;;;;;  el-get-version) "el-get/el-get" "el-get/el-get.el" (21542
-;;;;;;  61403 0 0))
+;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (21575 1048
+;;;;;;  0 0))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -880,7 +878,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "scala-mode2/scala-mode2-paragraph.el" "scala-mode2/scala-mode2-pkg.el"
 ;;;;;;  "scala-mode2/scala-mode2-sbt.el" "scala-mode2/scala-mode2-syntax.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (21542 61878 657181 0))
+;;;;;;  (21575 1049 337825 0))
 
 ;;;***
 
