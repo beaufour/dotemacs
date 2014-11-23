@@ -1,5 +1,6 @@
 *.elc
 *~
+/.python-environments
 /elpa
 ac-comphist.dat
 auto-save-list/
